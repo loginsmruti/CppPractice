@@ -3,7 +3,7 @@
 #include<iostream>
 
 struct Widget{
-    
+
     std::string name;
     int id;
 
@@ -11,7 +11,6 @@ struct Widget{
     :name(_name),id(_id)
     {}
     
-
     friend std::ostream& operator<<(std::ostream& out, const Widget &w1)
 	{
 		out << w1.name << "/" << w1.id;
