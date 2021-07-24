@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AbstractState	MachineStates.hh	/^class AbstractState$/;"	c
+Machine	Machine.cc	/^Machine::Machine(int stockQuantity) :$/;"	f	class:Machine
+Machine	Machine.hh	/^class Machine$/;"	c
+Normal	MachineStates.hh	/^class Normal : public AbstractState$/;"	c
+SoldOut	MachineStates.hh	/^class SoldOut : public AbstractState$/;"	c
+getCurrentStock	Machine.cc	/^int Machine::getCurrentStock() {$/;"	f	class:Machine
+mState	Machine.hh	/^    AbstractState* mState;$/;"	m	class:Machine
+mStockQuantity	Machine.hh	/^    int mStockQuantity;$/;"	m	class:Machine
+main	MachineFsm.cc	/^int main() {$/;"	f
+refill	Machine.cc	/^void Machine::refill(int stockQuantity) {$/;"	f	class:Machine
+refill	MachineStates.cc	/^void Normal::refill(Machine &machine , int quantity)$/;"	f	class:Normal
+refill	MachineStates.cc	/^void SoldOut::refill(Machine &machine , int quantity)$/;"	f	class:SoldOut
+sell	Machine.cc	/^void Machine::sell(int stockQuantity) {$/;"	f	class:Machine
+sell	MachineStates.cc	/^void Normal::sell(Machine &machine , int quantity) {$/;"	f	class:Normal
+sell	MachineStates.cc	/^void SoldOut::sell(Machine &machine , int quantity) {$/;"	f	class:SoldOut
+setState	MachineStates.cc	/^void AbstractState::setState(Machine &machine , AbstractState* state) {$/;"	f	class:AbstractState
+updateStock	MachineStates.cc	/^void AbstractState::updateStock(Machine& machine , int quantity) {$/;"	f	class:AbstractState
+~AbstractState	MachineStates.cc	/^AbstractState::~AbstractState() $/;"	f	class:AbstractState
+~Machine	Machine.cc	/^Machine::~Machine() {$/;"	f	class:Machine
+~Normal	MachineStates.cc	/^Normal::~Normal() { }$/;"	f	class:Normal
+~SoldOut	MachineStates.cc	/^SoldOut::~SoldOut() {}$/;"	f	class:SoldOut

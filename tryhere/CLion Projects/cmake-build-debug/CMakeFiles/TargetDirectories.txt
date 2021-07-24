@@ -1,0 +1,3 @@
+/Users/vicky/Documents/c++/tryhere/CLion Projects/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/vicky/Documents/c++/tryhere/CLion Projects/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vicky/Documents/c++/tryhere/CLion Projects/cmake-build-debug/CMakeFiles/CLion_Projects.dir

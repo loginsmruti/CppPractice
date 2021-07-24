@@ -1,0 +1,373 @@
+21. Program to check the number is perfect number or not. 
+22. Program to find generic root of a number.  
+23. Program to check a year is leap year or not. 
+24. Program to revese a string 
+25. Program to add a sub-string in a string 
+26. Program to traverse a string in reverse order 
+27. Program to count number of vowels , digits,characters and word 
+present in string. 
+28. Program to add between two matrix 
+29. Program to multiplication between two matrix 
+30. Program to transpose a matrix 
+31. Program to check a matrix is sparse matrix or not 
+32. Program to calculate Amicable pairs from 1 to 1000 
+33. Program to calculate Sum of the series 1+2+3+---------+n  
+34. Program to find area triangle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+21. Program to check the number is perfect number or not. 
+main() 
+{ 
+        int n,x; 
+        printf("Enter a number:"); 
+        scanf("%d",&n); 
+        x=check_perfect(n); 
+        if(x==n) 
+                printf("Perfect number :"); 
+        else 
+                printf("Not a perfect number :"); 
+ 
+} 
+int check_perfect(int  n) 
+{ 
+        int s=0,i=1; 
+        while(i<n) 
+        { 
+                if(n%i==0) 
+                        s=s+i; 
+                i++; 
+        } 
+        return s; 
+} 
+22.Program to find generic root of a number. 
+main() 
+{ 
+        int n,k; 
+        printf("Enter a number"); 
+        scanf("%d",&n); 
+        k=generic(n); 
+        printf("%d",k); 
+} 
+int generic(int n) 
+{ 
+        int sum,r; 
+        if(n<10) 
+                return n; 
+        while(n>10) 
+        { 
+                sum=0; 
+                while(n!=0) 
+                { 
+                        r=n%10; 
+                        n=n/10; 
+                        sum+=r; 
+                } 
+                if(sum>10) 
+                        n=sum; 
+                else 
+                        break; 
+        } 
+        return sum; 
+} 
+ 
+ 
+ 
+23. Program to check a year is leap year or not. 
+main() 
+{ 
+        int year; 
+        printf("Enter the year :\n"); 
+        scanf("%d",&year); 
+ 
+        if((year % 400==0 )|| ((year % 4==0)&& (year %100!=0))) 
+                printf("Leap Year "); 
+        else 
+              printf("Not leap year"); 
+} 
+ 
+ 
+24. Program to revese a string 
+main() 
+{ 
+  char x[100]; 
+  printf("Enter a string :"); 
+  gets(x); 
+  strrev(x); 
+  printf("%s",x); 
+} 
+int strrev(char *x) 
+{ 
+        int len=strlen(x); 
+        int i; 
+        char temp; 
+        for(i=0;i<len/2;i++) 
+        { 
+                temp=x[i]; 
+                x[i]=x[len-i-1]; 
+                x[len-i-1]=temp; 
+        } 
+} 
+25. Program to add a sub-string in a string 
+main() 
+{ 
+        char x[100],y[20]; 
+        int pos; 
+        printf("Enter string :"); 
+        gets(x); 
+        printf("Enter substring:"); 
+        scanf("%s",y); 
+        printf("Enter position:"); 
+        scanf("%d",&pos); 
+        add_substring(x,y,pos); 
+} 
+int add_substring(char *x,char *y,int pos) 
+{ 
+        char z[100]; 
+        int i=0,j=0,k; 
+        memset(z,0,sizeof(z)); 
+        while(i<pos) 
+        { 
+                z[i]=*x; 
+                x++; 
+                i++; 
+        } 
+        while(*y!=0) 
+        { 
+                z[i]=*y; 
+                i++; 
+                y++; 
+        } 
+        z[i]=' '; 
+        i++; 
+        while(*x!=0) 
+        { 
+                z[i]=*x; 
+                i++; 
+                x++; 
+        } 
+        z[i]=0; 
+        printf("%s",z); 
+} 
+26. Program to traverse a string in reverse order 
+  main() 
+  { 
+          char x[100]; 
+          printf("Enter a string :"); 
+           gets(x); 
+            int len=strlen(x)-1; 
+          while(len>=0) 
+          { 
+                  printf("%c",x[len]); 
+                   len--; 
+          } 
+  } 
+27. Program to count number of words,vowels,digits and space present 
+in string. 
+main() 
+{ 
+        int word=0,space=0,digit=0,vowels=0,i; 
+        char x[100]; 
+        printf("Enter a string :"); 
+        gets(x); 
+ 
+        for(i=0;i<strlen(x);i++) 
+        { 
+                if(x[i]=='a' || x[i]=='A' || x[i]=='e' || x[i]=='E' || 
+x[i]=='i' || x[i]=='I' 
+                                 || x[i]=='o' || x[i]=='O' || 
+x[i]=='u' || x[i]=='U') 
+                vowels++; 
+                if(x[i]>=48 && x[i]<=57) 
+                        digit++; 
+                if(x[i]==32) //space 
+                        space++; 
+ 
+        } 
+        word=space+1; 
+        printf("%d %d %d %d\n",word,space,digit,vowels); 
+ 
+} 
+ 
+ 
+ 
+28. Program to add between two matrix 
+main() 
+{ 
+        int a[3][3]={ 
+                        1,2,1, 
+                        1,2,2, 
+                        3,2,1 
+                        }; 
+        int b[3][3]={ 
+                        2,2,1, 
+                        1,1,1, 
+                        2,3,1 
+                }; 
+        int c[3][3]; 
+        int i,j,k,sum=0; 
+        for(i=0;i<3;i++) 
+        { 
+                for(j=0;j<3;j++) 
+                { 
+                        c[i][j]=a[i][j]*b[i][j]; 
+                } 
+        } 
+        for(i=0;i<3;i++) 
+        { 
+                for(j=0;j<3;j++) 
+                { 
+                        printf("%d ",c[i][j]); 
+                } 
+                printf("\n"); 
+        } 
+} 
+ 
+29. Program for multiplication between two matrix 
+main() 
+{ 
+        int a[3][3]={ 
+                        1,2,1, 
+                        1,2,2, 
+                        3,2,1 
+                        }; 
+        int b[3][3]={ 
+                        2,2,1, 
+                        1,1,1, 
+                        2,3,1 
+                }; 
+        int c[3][3]; 
+        int i,j,k,sum=0; 
+        for(i=0;i<3;i++) 
+        { 
+                for(j=0;j<3;j++) 
+                { 
+                        c[i][j]=0; 
+                        for(k=0;k<3;k++) 
+                        { 
+                                c[i][j]=c[i][j]+a[i][k]*b[k][j]; 
+                        } 
+                } 
+        } 
+        for(i=0;i<3;i++) 
+        { 
+                for(j=0;j<3;j++) 
+                { 
+                        printf("%d ",c[i][j]); 
+                } 
+                printf("\n"); 
+        } 
+} 
+30. Program to transpose a matrix 
+main() 
+{ 
+        int a[3][5]={ 
+                        1,4,5,6,7, 
+                        2,3,4,1,5, 
+                        9,5,3,1,4 
+                        }; 
+        int b[5][3]; 
+        int i,j; 
+        for(i=0;i<3;i++) 
+        { 
+                for(j=0;j<5;j++) 
+                { 
+                        b[j][i]=a[i][j]; 
+                } 
+        } 
+ 
+        for(i=0;i<5;i++) 
+        { 
+                for(j=0;j<3;j++) 
+                { 
+                        printf("%d",b[i][j]); 
+                } 
+                printf("\n"); 
+        } 
+ 
+} 
+31.  Program to check a matrix is sparse matrix or not 
+ 
+main() 
+{ 
+        int mat[3][5]={ 
+                        1,0,2,3,0, 
+                        0,1,0,1,0, 
+                        0,0,0,1,0 
+                        }; 
+ 
+        int i,j,nzero=0,zero=0; 
+ 
+        for(i=0;i<3;i++) 
+        { 
+                for(j=0;j<5;j++) 
+                { 
+                        if(mat[i][j]!=0) 
+                                nzero++; 
+                        else 
+                                zero++; 
+                } 
+        } 
+        if(zero>nzero) 
+                printf("The matrix is sparse matrix"); 
+        else 
+                printf("Not a sparse matrix"); 
+} 
+ 
+32. Program to calculate Amicable pairs from 1 to 1000 
+ 
+#include "stdio.h" 
+main() 
+{ 
+        int n,k; 
+        int i=1,s1=0,s2=0; 
+        for(k=1;k<=1000;k++) 
+        { 
+                n=k; 
+                while(i<n) 
+                { 
+                        if(n%i==0) 
+                                s1=s1+i; 
+                        i++; 
+                } 
+                i=1; 
+                if(s1==n) 
+                   continue; 
+                while(i<s1) 
+                { 
+                        if(s1%i==0) 
+                                s2=s2+i; 
+                        i++; 
+                } 
+                if(n==s2) 
+                        printf("%d \n",n); 
+ 
+                s1=0; 
+                s2=0; 
+        } 
+} 
+ 
+33. Program to calculate Sum of the series 1+2+3+---------+n  
+main()  
+{  
+  int r;  
+  printf("Enter the number range: ");  
+  scanf("%d",&r);  
+  printf("%d",(r*(r+1))/2);  
+}  
+ 
+34. Program to find area triangle 
+ 
+#include "math.h" 
+int main() 
+{ 
+    double a,b,c,s; 
+    double area; 
+ 
+    printf("Enter the size of triangle :"); 
+    scanf("%lf%lf%lf",&a,&b,&c); 
+ 
+    s = (a + b + c)/2; 
+    area =sqrt (s*(s-a)*(s-b)*(s-c)); 
+ 
+    printf("%lf",area); 
+} 
+ 

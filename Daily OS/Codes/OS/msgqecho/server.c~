@@ -1,0 +1,18 @@
+#include"header.h"
+int main()
+{
+   struct msg m;
+   int mid=msgget(KEY,IPC_CREAT|0660);
+   while(1)
+   {
+       msgrcv(mid,&m,sizeof(struct student),1,0);
+       printf("Messege Recived : \n");
+       printf("Type :- %ld\n",m.mtype); 	
+       printf("Name : - %s\n",m.s.name);
+       printf("Age : - %d\n",m.s.age);
+       m.mtype=2;
+       msgsnd(mid,&m,sizeof(structstudent),0);
+   }
+
+}
+

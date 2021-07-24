@@ -1,0 +1,15 @@
+23:16:49 **** Build of configuration Debug for project TestC++Eclipse ****
+make all 
+Building file: ../src/TestC++Eclipse.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestC++Eclipse.d" -MT"src/TestC++Eclipse.o" -o "src/TestC++Eclipse.o" "../src/TestC++Eclipse.cpp"
+Finished building: ../src/TestC++Eclipse.cpp
+ 
+Building target: TestC++Eclipse
+Invoking: MacOS X C++ Linker
+g++  -o "TestC++Eclipse"  ./src/TestC++Eclipse.o   
+Finished building target: TestC++Eclipse
+ 
+23:20:12 **** Incremental Build of configuration Debug for project TestC++Eclipse ****
+make all 
+make: Nothing to be done for `all'.

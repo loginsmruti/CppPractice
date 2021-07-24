@@ -1,0 +1,332 @@
+Script started on Sun Jul  2 23:26:50 2017
+[?1034hbash-3.2$ ls
+2d_vector_array.cpp			implementList.cc			string_trial.cc
+7.c					implement_queue_using_array.cc		structc.c
+GetOpt.tcl.log				implement_queue_using_linkedlist.cc	techGigC.c
+Rocky.dat				implement_queue_using_stl.cc		techgig_sys_22.c
+Sample.dat				inputIssue.cc				techgig_sys_25.c
+binary.cc				insertIntoMapUsingExternalComparator.cc	techgig_sys_26.c
+bitset.cc				invalidateIterator.cc			test.c
+cE3TechGigGrade1.c			invalidateIterator1.cc			test.cc
+cE3TechGigGrade1.cc			invalidateIteratorInsertion.cc		test.txt
+callBackImplemented.cc			keyboard_input_to_set.cc		test_trial.c
+char_traits.cc				limit_mem_alloc_of_process.c		tokem.c
+checkConstness.cc			limit_num_of_child_process.c		token_match.c
+checkMapInternals.cc			limit_open_fd_of_process.c		tokenizeStringCplusPlus.cc
+checkSetInternals.cc			listImplementation.cc			tree.cc
+checkVectrorInternals.cc		map.c					trial.cc
+constructDestruct.cc			mapComparator.cc			trial1.c
+controlling_cpu_time_limit.c		multiton.cc				trial2.cc
+copy.txt				mytrial.c				trial3.c
+create_set_using_arry.cc		pattern printing			trialTest.c
+ctest.c					printContentOfTxtFile.cc		trialThread.c
+customHasher.cc				printFrequency.cc			trialThread1.c
+datafile				printThread.c				trialVectorIterator.cc
+dump.c					printThread_1.c				triall.cc
+eraseList.cc				process					typescript
+experimentFork.c			rdBuf.cc				unorderedSet.cc
+fileOperation.cc			read.c					valarray.cc
+file_handling.cc			readwriteOnFile.cc			vectorHiddenCost.cc
+friendClass.cc				ref_to_ptr.cc				vectorImplementation.cc
+fsm					reference.cc				vicky.c
+gdb_script.gdb				set.cc					virtInheritanceParamConstructor.cc
+gdb_script2.gdb				set_assign.cc				writeToFail.cc
+generateLinkedListFromArray.cc		stream.cc
+half_duplex_pipe.c			stream1.cc
+bash-3.2$ ls -alrth
+total 888
+-rwxr-xr-x@   1 vicky  staff   615B Jul  7  2016 vicky.c
+-rwxr-xr-x@   1 vicky  staff   1.2K Jul 20  2016 stream.cc
+-rwxr-xr-x@   1 vicky  staff   715B Jul 29  2016 map.c
+-rwxr-xr-x@   1 vicky  staff   303B Aug  9  2016 trial1.c
+-rwxr-xr-x@   1 vicky  staff    19K Aug 23  2016 tree.cc
+-rwxr-xr-x@   1 vicky  staff   701B Sep  8  2016 file_handling.cc
+-rwxr-xr-x@   1 vicky  staff   257B Sep  9  2016 trial2.cc
+-rwxr-xr-x@   1 vicky  staff   311B Sep  9  2016 printContentOfTxtFile.cc
+-rwxr-xr-x@   1 vicky  staff    36B Sep  9  2016 test.txt
+-rwxr-xr-x@   1 vicky  staff   1.1K Sep  9  2016 char_traits.cc
+-rwxr-xr-x@   1 vicky  staff   451B Sep 12  2016 implement_queue_using_stl.cc
+-rwxr-xr-x@   1 vicky  staff   480B Sep 12  2016 create_set_using_arry.cc
+-rwxr-xr-x@   1 vicky  staff    20K Sep 12  2016 gdb_script.gdb
+-rwxr-xr-x@   1 vicky  staff    20K Sep 12  2016 gdb_script2.gdb
+-rwxr-xr-x@   1 vicky  staff   704B Sep 13  2016 controlling_cpu_time_limit.c
+-rwxr-xr-x@   1 vicky  staff   1.0K Sep 13  2016 limit_open_fd_of_process.c
+-rwxr-xr-x@   1 vicky  staff   856B Sep 13  2016 limit_num_of_child_process.c
+-rwxr-xr-x@   1 vicky  staff   244B Sep 15  2016 trial3.c
+-rwxr-xr-x@   1 vicky  staff   907B Sep 16  2016 limit_mem_alloc_of_process.c
+-rwxr-xr-x@   1 vicky  staff   135B Oct  4  2016 read.c
+-rwxr-xr-x@   1 vicky  staff   988B Oct 10  2016 test.cc
+-rwxr-xr-x@   1 vicky  staff   439B Oct 10  2016 triall.cc
+-rwxr-xr-x@   1 vicky  staff   232B Oct 13  2016 test_trial.c
+-rwxr-xr-x@   1 vicky  staff   587B Oct 20  2016 ctest.c
+-rwxr-xr-x@   1 vicky  staff   2.2K Oct 20  2016 techGigC.c
+-rwxr-xr-x@   1 vicky  staff   2.3K Oct 20  2016 trialTest.c
+-rwxr-xr-x@   1 vicky  staff   568B Oct 20  2016 stream1.cc
+-rwxr-xr-x@   1 vicky  staff   2.3K Oct 20  2016 implement_queue_using_array.cc
+-rwxr-xr-x@   1 vicky  staff   463B Oct 20  2016 rdBuf.cc
+-rwxr-xr-x@   1 vicky  staff    36B Oct 20  2016 copy.txt
+-rwxr-xr-x@   1 vicky  staff   537B Oct 21  2016 trialThread1.c
+-rwxr-xr-x@   1 vicky  staff   458B Oct 24  2016 printThread.c
+-rwxr-xr-x@   1 vicky  staff   1.0K Oct 24  2016 trialThread.c
+-rwxr-xr-x@   1 vicky  staff   504B Oct 24  2016 printThread_1.c
+-rwxr-xr-x@   1 vicky  staff    17B Oct 24  2016 datafile
+-rwxr-xr-x@   1 vicky  staff   504B Oct 24  2016 techgig_sys_22.c
+-rwxr-xr-x@   1 vicky  staff   440B Oct 24  2016 techgig_sys_25.c
+-rwxr-xr-x@   1 vicky  staff   507B Oct 24  2016 techgig_sys_26.c
+-rwxr-xr-x@   1 vicky  staff   713B Oct 27  2016 unorderedSet.cc
+-rwxr-xr-x@   1 vicky  staff   714B Oct 27  2016 trial.cc
+-rwxr-xr-x@   1 vicky  staff   866B Oct 27  2016 invalidateIterator.cc
+-rwxr-xr-x@   1 vicky  staff   716B Oct 27  2016 invalidateIteratorInsertion.cc
+-rwxr-xr-x@   1 vicky  staff   2.2K Oct 27  2016 generateLinkedListFromArray.cc
+-rwxr-xr-x@   1 vicky  staff   2.8K Nov  2  2016 dump.c
+-rwxr-xr-x@   1 vicky  staff   782B Nov  3  2016 checkVectrorInternals.cc
+-rwxr-xr-x@   1 vicky  staff   634B Nov  3  2016 checkSetInternals.cc
+-rwxr-xr-x@   1 vicky  staff   1.7K Nov  3  2016 checkMapInternals.cc
+-rwxr-xr-x@   1 vicky  staff   1.5K Nov  3  2016 tokenizeStringCplusPlus.cc
+-rwxr-xr-x@   1 vicky  staff   687B Nov  8  2016 writeToFail.cc
+-rwxr-xr-x@   1 vicky  staff   929B Nov  9  2016 fileOperation.cc
+-rwxr-xr-x@   1 vicky  staff    30B Nov  9  2016 Sample.dat
+-rwxr-xr-x@   1 vicky  staff   1.3K Nov  9  2016 readwriteOnFile.cc
+-rwxr-xr-x@   1 vicky  staff   204B Nov 25  2016 string_trial.cc
+-rwxr-xr-x@   1 vicky  staff   587B Dec 14  2016 token_match.c
+-rwxr-xr-x@   1 vicky  staff   1.5K Dec 14  2016 tokem.c
+-rwxr-xr-x@   1 vicky  staff   653B Feb 20 15:52 invalidateIterator1.cc
+-rwxr-xr-x@   1 vicky  staff   262B Feb 20 16:03 7.c
+-rwxr-xr-x@   1 vicky  staff   789B Feb 20 16:26 binary.cc
+-rwxr-xr-x@   1 vicky  staff   631B Mar 30 09:57 cE3TechGigGrade1.cc
+-rwxr-xr-x@   1 vicky  staff   2.4K Mar 30 10:46 test.c
+-rwxr-xr-x@   1 vicky  staff   862B Mar 30 14:20 cE3TechGigGrade1.c
+-rwxr-xr-x@   1 vicky  staff   1.0K Mar 31 10:42 printFrequency.cc
+-rwxr-xr-x@   1 vicky  staff   449B Mar 31 13:23 ref_to_ptr.cc
+-rwxr-xr-x@   1 vicky  staff    62B Mar 31 15:35 Rocky.dat
+-rwxr-xr-x@   1 vicky  staff   341B Apr  4 12:04 inputIssue.cc
+-rwxr-xr-x@   1 vicky  staff   210B Apr 12 08:18 GetOpt.tcl.log
+-rwxr-xr-x@   1 vicky  staff   2.7K Apr 13 09:06 callBackImplemented.cc
+-rwxr-xr-x@   1 vicky  staff   3.2K Apr 13 10:02 implementList.cc
+-rwxr-xr-x@   1 vicky  staff   202B May 24 10:35 structc.c
+-rwxr-xr-x@   1 vicky  staff   438B May 24 15:25 valarray.cc
+-rwxr-xr-x@   1 vicky  staff   851B May 25 08:24 trialVectorIterator.cc
+-rwxr-xr-x@   1 vicky  staff   4.2K May 26 08:20 listImplementation.cc
+-rwxr-xr-x@   1 vicky  staff   2.0K May 26 08:52 implement_queue_using_linkedlist.cc
+-rwxr-xr-x@   1 vicky  staff   3.5K May 26 14:29 vectorHiddenCost.cc
+-rwxr-xr-x@   1 vicky  staff   1.0K May 29 08:45 eraseList.cc
+-rwxr-xr-x@   1 vicky  staff   1.4K May 29 10:13 insertIntoMapUsingExternalComparator.cc
+-rwxr-xr-x@   1 vicky  staff   1.9K May 29 13:03 mapComparator.cc
+-rwxr-xr-x@   1 vicky  staff   1.3K May 30 08:58 customHasher.cc
+-rwxr-xr-x@   1 vicky  staff   417B May 30 09:32 keyboard_input_to_set.cc
+-rwxr-xr-x@   1 vicky  staff   1.6K May 30 12:44 multiton.cc
+-rwxr-xr-x@   1 vicky  staff   125B May 30 14:51 reference.cc
+-rwxr-xr-x@   1 vicky  staff   721B May 31 15:41 experimentFork.c
+-rwxr-xr-x@   1 vicky  staff   565B Jun  1 09:19 constructDestruct.cc
+-rwxr-xr-x@   1 vicky  staff   1.0K Jun  1 11:33 virtInheritanceParamConstructor.cc
+-rwxr-xr-x@   1 vicky  staff   678B Jun  2 10:59 checkConstness.cc
+-rwxr-xr-x@   1 vicky  staff   854B Jun  4 08:56 friendClass.cc
+-rwxr-xr-x@   1 vicky  staff   900B Jun  5 09:08 set.cc
+-rwxr-xr-x@   1 vicky  staff   3.0K Jun  5 09:12 vectorImplementation.cc
+-rwxr-xr-x@   1 vicky  staff   310B Jun  5 09:13 mytrial.c
+-rwxr-xr-x@   1 vicky  staff   2.3K Jun  5 09:52 half_duplex_pipe.c
+-rwxr-xr-x@   1 vicky  staff   564B Jun  5 09:55 set_assign.cc
+-rwxr-xr-x@   1 vicky  staff   377B Jun  5 10:08 bitset.cc
+drwxr-xr-x@   4 vicky  staff   136B Jun  6 18:17 process
+drwxr-xr-x@   8 vicky  staff   272B Jun  6 18:17 fsm
+-rw-r--r--@   1 vicky  staff   6.0K Jun 13 22:21 .DS_Store
+drwxr-xr-x    5 vicky  staff   170B Jun 17 19:10 pattern printing
+drwxr-xr-x   23 vicky  staff   782B Jun 29 23:30 ..
+-rwxr-xr-x@   1 vicky  staff   1.0K Jul  2 23:06 2d_vector_array.cpp
+drwxr-xr-x@ 100 vicky  staff   3.3K Jul  2 23:26 .
+-rw-r--r--    1 vicky  staff    43B Jul  2 23:26 typescript
+bash-3.2$ vim tyy[Kpescript 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;48r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[48;1H"typescript" [noeol] 134L, 8235C[>c[1;1H[38;5;130m  1 [mScript started on Sun Jul  2 23:26:50 2017
+[38;5;130m  2 [m[34m^[[m[?1034hbash-3.2$ ls[34m^M[m
+[38;5;130m  3 [m2d_vector_array.cpp     implementList.cc      string_trial.cc[34m^M[m
+[38;5;130m  4 [m7.c[9Cimplement_queue_using_array.cc    structc.c[34m^M[m
+[38;5;130m  5 [mGetOpt.tcl.log[8Cimplement_queue_using_linkedlist.cc techGigC.c[34m^M[m
+[38;5;130m  6 [mRocky.dat[7Cimplement_queue_using_stl.cc    techgig_sys_22.c[34m^M[m
+[38;5;130m  7 [mSample.dat[8CinputIssue.cc[7Ctechgig_sys_25.c[34m^M[m
+[38;5;130m  8 [mbinary.cc[7CinsertIntoMapUsingExternalComparator.cc techgig_sys_26.c[34m^M[m
+[38;5;130m  9 [mbitset.cc[7CinvalidateIterator.cc     test.c[34m^M[m
+[38;5;130m 10 [mcE3TechGigGrade1.c      invalidateIterator1.cc      test.cc[34m^M[m
+[38;5;130m 11 [mcE3TechGigGrade1.cc     invalidateIteratorInsertion.cc    test.txt[34m^M[m
+[38;5;130m 12 [mcallBackImplemented.cc      keyboard_input_to_set.cc    test_trial.c[34m^M[m
+[38;5;130m 13 [mchar_traits.cc[8Climit_mem_alloc_of_process.c    tokem.c[34m^M[m
+[38;5;130m 14 [mcheckConstness.cc     limit_num_of_child_process.c    token_match.c[34m^M[m
+[38;5;130m 15 [mcheckMapInternals.cc      limit_open_fd_of_process.c    tokenizeStringCplusPlus.cc[34m^M[m
+[38;5;130m 16 [mcheckSetInternals.cc      listImplementation.cc     tree.cc[34m^M[m
+[38;5;130m 17 [mcheckVectrorInternals.cc    map.c[9Ctrial.cc[34m^M[m
+[38;5;130m 18 [mconstructDestruct.cc      mapComparator.cc      trial1.c[34m^M[m
+[38;5;130m 19 [mcontrolling_cpu_time_limit.c    multiton.cc[7Ctrial2.cc[34m^M[m
+[38;5;130m 20 [mcopy.txt[8Cmytrial.c[7Ctrial3.c[34m^M[m
+[38;5;130m 21 [mcreate_set_using_arry.cc    pattern printing      trialTest.c[34m^M[m
+[38;5;130m 22 [mctest.c[9CprintContentOfTxtFile.cc    trialThread.c[34m^M[m
+[38;5;130m 23 [mcustomHasher.cc[7CprintFrequency.cc     trialThread1.c[34m^M[m
+[38;5;130m 24 [mdatafile[8CprintThread.c[7CtrialVectorIterator.cc[34m^M[m
+[38;5;130m 25 [mdump.c[10CprintThread_1.c[7Ctriall.cc[34m^M[m
+[38;5;130m 26 [meraseList.cc[8Cprocess[9Ctypescript[34m^M[m
+[38;5;130m 27 [mexperimentFork.c      rdBuf.cc[8CunorderedSet.cc[34m^M[m
+[38;5;130m 28 [mfileOperation.cc      read.c[10Cvalarray.cc[34m^M[m
+[38;5;130m 29 [mfile_handling.cc      readwriteOnFile.cc      vectorHiddenCost.cc[34m^M[m
+[38;5;130m 30 [mfriendClass.cc[8Cref_to_ptr.cc[7CvectorImplementation.cc[34m^M[m
+[38;5;130m 31 [mfsm[9Creference.cc[8Cvicky.c[34m^M[m
+[38;5;130m 32 [mgdb_script.gdb[8Cset.cc[10CvirtInheritanceParamConstructor.cc[34m^M[m
+[38;5;130m 33 [mgdb_script2.gdb[7Cset_assign.cc[7CwriteToFail.cc[34m^M[m
+[38;5;130m 34 [mgenerateLinkedListFromArray.cc    stream.cc[34m^M[m
+[38;5;130m 35 [mhalf_duplex_pipe.c      stream1.cc[34m^M[m
+[38;5;130m 36 [mbash-3.2$ ls -alrth[34m^M[m
+[38;5;130m 37 [mtotal 888[34m^M[m
+[38;5;130m 38 [m-rwxr-xr-x@   1 vicky  staff   615B Jul  7  2016 vicky.c[34m^M[m
+[38;5;130m 39 [m-rwxr-xr-x@   1 vicky  staff   1.2K Jul 20  2016 stream.cc[34m^M[m
+[38;5;130m 40 [m-rwxr-xr-x@   1 vicky  staff   715B Jul 29  2016 map.c[34m^M[m
+[38;5;130m 41 [m-rwxr-xr-x@   1 vicky  staff   303B Aug  9  2016 trial1.c[34m^M[m
+[38;5;130m 42 [m-rwxr-xr-x@   1 vicky  staff    19K Aug 23  2016 tree.cc[34m^M[m
+[38;5;130m 43 [m-rwxr-xr-x@   1 vicky  staff   701B Sep  8  2016 file_handling.cc[34m^M[m
+[38;5;130m 44 [m-rwxr-xr-x@   1 vicky  staff   257B Sep  9  2016 trial2.cc[34m^M[m
+[38;5;130m 45 [m-rwxr-xr-x@   1 vicky  staff   311B Sep  9  2016 printContentOfTxtFile.cc[34m^M[m
+[38;5;130m 46 [m-rwxr-xr-x@   1 vicky  staff    36B Sep  9  2016 test.txt[34m^M[m
+[1m[7mtypescript                                                                                                                 1,1            Top[1;5H[?12l[?25h[?25l[m[48;131HG[1;5H[48;131H [46;5H[27m[m[H[2J[1;1H[38;5;130m 89 [m-rwxr-xr-x@   1 vicky  staff   1.3K Nov  9  2016 readwriteOnFile.cc[34m^M[m
+[38;5;130m 90 [m-rwxr-xr-x@   1 vicky  staff   204B Nov 25  2016 string_trial.cc[34m^M[m
+[38;5;130m 91 [m-rwxr-xr-x@   1 vicky  staff   587B Dec 14  2016 token_match.c[34m^M[m
+[38;5;130m 92 [m-rwxr-xr-x@   1 vicky  staff   1.5K Dec 14  2016 tokem.c[34m^M[m
+[38;5;130m 93 [m-rwxr-xr-x@   1 vicky  staff   653B Feb 20 15:52 invalidateIterator1.cc[34m^M[m
+[38;5;130m 94 [m-rwxr-xr-x@   1 vicky  staff   262B Feb 20 16:03 7.c[34m^M[m
+[38;5;130m 95 [m-rwxr-xr-x@   1 vicky  staff   789B Feb 20 16:26 binary.cc[34m^M[m
+[38;5;130m 96 [m-rwxr-xr-x@   1 vicky  staff   631B Mar 30 09:57 cE3TechGigGrade1.cc[34m^M[m
+[38;5;130m 97 [m-rwxr-xr-x@   1 vicky  staff   2.4K Mar 30 10:46 test.c[34m^M[m
+[38;5;130m 98 [m-rwxr-xr-x@   1 vicky  staff   862B Mar 30 14:20 cE3TechGigGrade1.c[34m^M[m
+[38;5;130m 99 [m-rwxr-xr-x@   1 vicky  staff   1.0K Mar 31 10:42 printFrequency.cc[34m^M[m
+[38;5;130m100 [m-rwxr-xr-x@   1 vicky  staff   449B Mar 31 13:23 ref_to_ptr.cc[34m^M[m
+[38;5;130m101 [m-rwxr-xr-x@   1 vicky  staff    62B Mar 31 15:35 Rocky.dat[34m^M[m
+[38;5;130m102 [m-rwxr-xr-x@   1 vicky  staff   341B Apr  4 12:04 inputIssue.cc[34m^M[m
+[38;5;130m103 [m-rwxr-xr-x@   1 vicky  staff   210B Apr 12 08:18 GetOpt.tcl.log[34m^M[m
+[38;5;130m104 [m-rwxr-xr-x@   1 vicky  staff   2.7K Apr 13 09:06 callBackImplemented.cc[34m^M[m
+[38;5;130m105 [m-rwxr-xr-x@   1 vicky  staff   3.2K Apr 13 10:02 implementList.cc[34m^M[m
+[38;5;130m106 [m-rwxr-xr-x@   1 vicky  staff   202B May 24 10:35 structc.c[34m^M[m
+[38;5;130m107 [m-rwxr-xr-x@   1 vicky  staff   438B May 24 15:25 valarray.cc[34m^M[m
+[38;5;130m108 [m-rwxr-xr-x@   1 vicky  staff   851B May 25 08:24 trialVectorIterator.cc[34m^M[m
+[38;5;130m109 [m-rwxr-xr-x@   1 vicky  staff   4.2K May 26 08:20 listImplementation.cc[34m^M[m
+[38;5;130m110 [m-rwxr-xr-x@   1 vicky  staff   2.0K May 26 08:52 implement_queue_using_linkedlist.cc[34m^M[m
+[38;5;130m111 [m-rwxr-xr-x@   1 vicky  staff   3.5K May 26 14:29 vectorHiddenCost.cc[34m^M[m
+[38;5;130m112 [m-rwxr-xr-x@   1 vicky  staff   1.0K May 29 08:45 eraseList.cc[34m^M[m
+[38;5;130m113 [m-rwxr-xr-x@   1 vicky  staff   1.4K May 29 10:13 insertIntoMapUsingExternalComparator.cc[34m^M[m
+[38;5;130m114 [m-rwxr-xr-x@   1 vicky  staff   1.9K May 29 13:03 mapComparator.cc[34m^M[m
+[38;5;130m115 [m-rwxr-xr-x@   1 vicky  staff   1.3K May 30 08:58 customHasher.cc[34m^M[m
+[38;5;130m116 [m-rwxr-xr-x@   1 vicky  staff   417B May 30 09:32 keyboard_input_to_set.cc[34m^M[m
+[38;5;130m117 [m-rwxr-xr-x@   1 vicky  staff   1.6K May 30 12:44 multiton.cc[34m^M[m
+[38;5;130m118 [m-rwxr-xr-x@   1 vicky  staff   125B May 30 14:51 reference.cc[34m^M[m
+[38;5;130m119 [m-rwxr-xr-x@   1 vicky  staff   721B May 31 15:41 experimentFork.c[34m^M[m
+[38;5;130m120 [m-rwxr-xr-x@   1 vicky  staff   565B Jun  1 09:19 constructDestruct.cc[34m^M[m
+[38;5;130m121 [m-rwxr-xr-x@   1 vicky  staff   1.0K Jun  1 11:33 virtInheritanceParamConstructor.cc[34m^M[m
+[38;5;130m122 [m-rwxr-xr-x@   1 vicky  staff   678B Jun  2 10:59 checkConstness.cc[34m^M[m
+[38;5;130m123 [m-rwxr-xr-x@   1 vicky  staff   854B Jun  4 08:56 friendClass.cc[34m^M[m
+[38;5;130m124 [m-rwxr-xr-x@   1 vicky  staff   900B Jun  5 09:08 set.cc[34m^M[m
+[38;5;130m125 [m-rwxr-xr-x@   1 vicky  staff   3.0K Jun  5 09:12 vectorImplementation.cc[34m^M[m
+[38;5;130m126 [m-rwxr-xr-x@   1 vicky  staff   310B Jun  5 09:13 mytrial.c[34m^M[m
+[38;5;130m127 [m-rwxr-xr-x@   1 vicky  staff   2.3K Jun  5 09:52 half_duplex_pipe.c[34m^M[m
+[38;5;130m128 [m-rwxr-xr-x@   1 vicky  staff   564B Jun  5 09:55 set_assign.cc[34m^M[m
+[38;5;130m129 [m-rwxr-xr-x@   1 vicky  staff   377B Jun  5 10:08 bitset.cc[34m^M[m
+[38;5;130m130 [mdrwxr-xr-x@   4 vicky  staff   136B Jun  6 18:17 process[34m^M[m
+[38;5;130m131 [mdrwxr-xr-x@   8 vicky  staff   272B Jun  6 18:17 fsm[34m^M[m
+[38;5;130m132 [m-rw-r--r--@   1 vicky  staff   6.0K Jun 13 22:21 .DS_Store[34m^M[m
+[38;5;130m133 [mdrwxr-xr-x    5 vicky  staff   170B Jun 17 19:10 pattern printing[34m^M[m
+[38;5;130m134 [mdrwx
+[1m[7mtypescript                                                                                                                 134,1          Bot[46;5H[?12l[?25h[?25l[m[48;131H:[46;5H[48;131H[K[48;1H:[?12l[?25h1[?25l[1;5H[27m[m[H[2J[1;1H[38;5;130m  1 [mScript started on Sun Jul  2 23:26:50 2017
+[38;5;130m  2 [m[34m^[[m[?1034hbash-3.2$ ls[34m^M[m
+[38;5;130m  3 [m2d_vector_array.cpp     implementList.cc      string_trial.cc[34m^M[m
+[38;5;130m  4 [m7.c[9Cimplement_queue_using_array.cc    structc.c[34m^M[m
+[38;5;130m  5 [mGetOpt.tcl.log[8Cimplement_queue_using_linkedlist.cc techGigC.c[34m^M[m
+[38;5;130m  6 [mRocky.dat[7Cimplement_queue_using_stl.cc    techgig_sys_22.c[34m^M[m
+[38;5;130m  7 [mSample.dat[8CinputIssue.cc[7Ctechgig_sys_25.c[34m^M[m
+[38;5;130m  8 [mbinary.cc[7CinsertIntoMapUsingExternalComparator.cc techgig_sys_26.c[34m^M[m
+[38;5;130m  9 [mbitset.cc[7CinvalidateIterator.cc     test.c[34m^M[m
+[38;5;130m 10 [mcE3TechGigGrade1.c      invalidateIterator1.cc      test.cc[34m^M[m
+[38;5;130m 11 [mcE3TechGigGrade1.cc     invalidateIteratorInsertion.cc    test.txt[34m^M[m
+[38;5;130m 12 [mcallBackImplemented.cc      keyboard_input_to_set.cc    test_trial.c[34m^M[m
+[38;5;130m 13 [mchar_traits.cc[8Climit_mem_alloc_of_process.c    tokem.c[34m^M[m
+[38;5;130m 14 [mcheckConstness.cc     limit_num_of_child_process.c    token_match.c[34m^M[m
+[38;5;130m 15 [mcheckMapInternals.cc      limit_open_fd_of_process.c    tokenizeStringCplusPlus.cc[34m^M[m
+[38;5;130m 16 [mcheckSetInternals.cc      listImplementation.cc     tree.cc[34m^M[m
+[38;5;130m 17 [mcheckVectrorInternals.cc    map.c[9Ctrial.cc[34m^M[m
+[38;5;130m 18 [mconstructDestruct.cc      mapComparator.cc      trial1.c[34m^M[m
+[38;5;130m 19 [mcontrolling_cpu_time_limit.c    multiton.cc[7Ctrial2.cc[34m^M[m
+[38;5;130m 20 [mcopy.txt[8Cmytrial.c[7Ctrial3.c[34m^M[m
+[38;5;130m 21 [mcreate_set_using_arry.cc    pattern printing      trialTest.c[34m^M[m
+[38;5;130m 22 [mctest.c[9CprintContentOfTxtFile.cc    trialThread.c[34m^M[m
+[38;5;130m 23 [mcustomHasher.cc[7CprintFrequency.cc     trialThread1.c[34m^M[m
+[38;5;130m 24 [mdatafile[8CprintThread.c[7CtrialVectorIterator.cc[34m^M[m
+[38;5;130m 25 [mdump.c[10CprintThread_1.c[7Ctriall.cc[34m^M[m
+[38;5;130m 26 [meraseList.cc[8Cprocess[9Ctypescript[34m^M[m
+[38;5;130m 27 [mexperimentFork.c      rdBuf.cc[8CunorderedSet.cc[34m^M[m
+[38;5;130m 28 [mfileOperation.cc      read.c[10Cvalarray.cc[34m^M[m
+[38;5;130m 29 [mfile_handling.cc      readwriteOnFile.cc      vectorHiddenCost.cc[34m^M[m
+[38;5;130m 30 [mfriendClass.cc[8Cref_to_ptr.cc[7CvectorImplementation.cc[34m^M[m
+[38;5;130m 31 [mfsm[9Creference.cc[8Cvicky.c[34m^M[m
+[38;5;130m 32 [mgdb_script.gdb[8Cset.cc[10CvirtInheritanceParamConstructor.cc[34m^M[m
+[38;5;130m 33 [mgdb_script2.gdb[7Cset_assign.cc[7CwriteToFail.cc[34m^M[m
+[38;5;130m 34 [mgenerateLinkedListFromArray.cc    stream.cc[34m^M[m
+[38;5;130m 35 [mhalf_duplex_pipe.c      stream1.cc[34m^M[m
+[38;5;130m 36 [mbash-3.2$ ls -alrth[34m^M[m
+[38;5;130m 37 [mtotal 888[34m^M[m
+[38;5;130m 38 [m-rwxr-xr-x@   1 vicky  staff   615B Jul  7  2016 vicky.c[34m^M[m
+[38;5;130m 39 [m-rwxr-xr-x@   1 vicky  staff   1.2K Jul 20  2016 stream.cc[34m^M[m
+[38;5;130m 40 [m-rwxr-xr-x@   1 vicky  staff   715B Jul 29  2016 map.c[34m^M[m
+[38;5;130m 41 [m-rwxr-xr-x@   1 vicky  staff   303B Aug  9  2016 trial1.c[34m^M[m
+[38;5;130m 42 [m-rwxr-xr-x@   1 vicky  staff    19K Aug 23  2016 tree.cc[34m^M[m
+[38;5;130m 43 [m-rwxr-xr-x@   1 vicky  staff   701B Sep  8  2016 file_handling.cc[34m^M[m
+[38;5;130m 44 [m-rwxr-xr-x@   1 vicky  staff   257B Sep  9  2016 trial2.cc[34m^M[m
+[38;5;130m 45 [m-rwxr-xr-x@   1 vicky  staff   311B Sep  9  2016 printContentOfTxtFile.cc[34m^M[m
+[38;5;130m 46 [m-rwxr-xr-x@   1 vicky  staff    36B Sep  9  2016 test.txt[34m^M[m
+[1m[7mtypescript                                                                                                                 1,1            Top[1;5H[?12l[?25h[?25l[m[48;131H:[1;5H[48;131H[K[48;1H:[?12l[?25h![?25l:![?1l>[?12l[?25h[?1049l
+
+W11: Warning: File "typescript" has changed since editing started
+See ":help W11" for more info.
+[O]K, (L)oad File: 
+Press ENTER or type command to continue[J[?1049h[?1h=[?25l[1;5H[27m[m[H[2J[1;1H[38;5;130m  1 [mScript started on Sun Jul  2 23:26:50 2017
+[38;5;130m  2 [m[34m^[[m[?1034hbash-3.2$ ls[34m^M[m
+[38;5;130m  3 [m2d_vector_array.cpp     implementList.cc      string_trial.cc[34m^M[m
+[38;5;130m  4 [m7.c[9Cimplement_queue_using_array.cc    structc.c[34m^M[m
+[38;5;130m  5 [mGetOpt.tcl.log[8Cimplement_queue_using_linkedlist.cc techGigC.c[34m^M[m
+[38;5;130m  6 [mRocky.dat[7Cimplement_queue_using_stl.cc    techgig_sys_22.c[34m^M[m
+[38;5;130m  7 [mSample.dat[8CinputIssue.cc[7Ctechgig_sys_25.c[34m^M[m
+[38;5;130m  8 [mbinary.cc[7CinsertIntoMapUsingExternalComparator.cc techgig_sys_26.c[34m^M[m
+[38;5;130m  9 [mbitset.cc[7CinvalidateIterator.cc     test.c[34m^M[m
+[38;5;130m 10 [mcE3TechGigGrade1.c      invalidateIterator1.cc      test.cc[34m^M[m
+[38;5;130m 11 [mcE3TechGigGrade1.cc     invalidateIteratorInsertion.cc    test.txt[34m^M[m
+[38;5;130m 12 [mcallBackImplemented.cc      keyboard_input_to_set.cc    test_trial.c[34m^M[m
+[38;5;130m 13 [mchar_traits.cc[8Climit_mem_alloc_of_process.c    tokem.c[34m^M[m
+[38;5;130m 14 [mcheckConstness.cc     limit_num_of_child_process.c    token_match.c[34m^M[m
+[38;5;130m 15 [mcheckMapInternals.cc      limit_open_fd_of_process.c    tokenizeStringCplusPlus.cc[34m^M[m
+[38;5;130m 16 [mcheckSetInternals.cc      listImplementation.cc     tree.cc[34m^M[m
+[38;5;130m 17 [mcheckVectrorInternals.cc    map.c[9Ctrial.cc[34m^M[m
+[38;5;130m 18 [mconstructDestruct.cc      mapComparator.cc      trial1.c[34m^M[m
+[38;5;130m 19 [mcontrolling_cpu_time_limit.c    multiton.cc[7Ctrial2.cc[34m^M[m
+[38;5;130m 20 [mcopy.txt[8Cmytrial.c[7Ctrial3.c[34m^M[m
+[38;5;130m 21 [mcreate_set_using_arry.cc    pattern printing      trialTest.c[34m^M[m
+[38;5;130m 22 [mctest.c[9CprintContentOfTxtFile.cc    trialThread.c[34m^M[m
+[38;5;130m 23 [mcustomHasher.cc[7CprintFrequency.cc     trialThread1.c[34m^M[m
+[38;5;130m 24 [mdatafile[8CprintThread.c[7CtrialVectorIterator.cc[34m^M[m
+[38;5;130m 25 [mdump.c[10CprintThread_1.c[7Ctriall.cc[34m^M[m
+[38;5;130m 26 [meraseList.cc[8Cprocess[9Ctypescript[34m^M[m
+[38;5;130m 27 [mexperimentFork.c      rdBuf.cc[8CunorderedSet.cc[34m^M[m
+[38;5;130m 28 [mfileOperation.cc      read.c[10Cvalarray.cc[34m^M[m
+[38;5;130m 29 [mfile_handling.cc      readwriteOnFile.cc      vectorHiddenCost.cc[34m^M[m
+[38;5;130m 30 [mfriendClass.cc[8Cref_to_ptr.cc[7CvectorImplementation.cc[34m^M[m
+[38;5;130m 31 [mfsm[9Creference.cc[8Cvicky.c[34m^M[m
+[38;5;130m 32 [mgdb_script.gdb[8Cset.cc[10CvirtInheritanceParamConstructor.cc[34m^M[m
+[38;5;130m 33 [mgdb_script2.gdb[7Cset_assign.cc[7CwriteToFail.cc[34m^M[m
+[38;5;130m 34 [mgenerateLinkedListFromArray.cc    stream.cc[34m^M[m
+[38;5;130m 35 [mhalf_duplex_pipe.c      stream1.cc[34m^M[m
+[38;5;130m 36 [mbash-3.2$ ls -alrth[34m^M[m
+[38;5;130m 37 [mtotal 888[34m^M[m
+[38;5;130m 38 [m-rwxr-xr-x@   1 vicky  staff   615B Jul  7  2016 vicky.c[34m^M[m
+[38;5;130m 39 [m-rwxr-xr-x@   1 vicky  staff   1.2K Jul 20  2016 stream.cc[34m^M[m
+[38;5;130m 40 [m-rwxr-xr-x@   1 vicky  staff   715B Jul 29  2016 map.c[34m^M[m
+[38;5;130m 41 [m-rwxr-xr-x@   1 vicky  staff   303B Aug  9  2016 trial1.c[34m^M[m
+[38;5;130m 42 [m-rwxr-xr-x@   1 vicky  staff    19K Aug 23  2016 tree.cc[34m^M[m
+[38;5;130m 43 [m-rwxr-xr-x@   1 vicky  staff   701B Sep  8  2016 file_handling.cc[34m^M[m
+[38;5;130m 44 [m-rwxr-xr-x@   1 vicky  staff   257B Sep  9  2016 trial2.cc[34m^M[m
+[38;5;130m 45 [m-rwxr-xr-x@   1 vicky  staff   311B Sep  9  2016 printContentOfTxtFile.cc[34m^M[m
+[38;5;130m 46 [m-rwxr-xr-x@   1 vicky  staff    36B Sep  9  2016 test.txt[34m^M[m
+[1m[7mtypescript                                                                                                                 1,1            Top[1;5H[?12l[?25h[?25l[m[48;131H:[1;5H[48;131H[K[48;1H:[?12l[?25h![?25l[48;2H[K[48;2H[?12l[?25hq![?25l[?1l>[?12l[?25h[?1049l
+bash-3.2$ exit
+exit
+
+Script done on Sun Jul  2 23:27:23 2017

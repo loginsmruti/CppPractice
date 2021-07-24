@@ -1,0 +1,92 @@
+#include"header.h"
+int main()
+{
+    struct student st;
+    int shid = shmget(SHMKEY,100*sizeof(struct student)+sizeof(int),IPC_CREAT|0660);
+    void *p = shmat(shid,0,0);
+    int mid = msgget(MSGKEY,IPC_CREAT|0660); 
+    int *no_of_rec=p,i,ch;    
+    *no_of_rec=0;
+    struct student *stptr = (struct student *)(no_of_rec+1);
+    int fd = open("st.data",O_CREAT|O_RDWR,S_IRUSR|S_IWUSR);
+    if(fd==-1)
+    {
+        printf("Could not open file \n");
+        exit(0);
+    }
+    while(read(fd,&st,sizeof(st)))
+    {       
+       memcpy(stptr,&st,sizeof(st));
+       (*no_of_rec)++;
+       stptr++;
+    }    
+    printf("File put to share \n");
+    printf("Count :  %d\n",*no_of_rec);
+    printf("Starting Application \n");
+    int pid = fork();
+    if(pid)
+    {
+            
+      int pid2=fork();
+      if(!pid2)
+      {
+         char *arg[]={"logger",NULL};
+         execvp("./logger",arg);
+      }   
+      struct student *temp;
+      struct reqmsg rm,rm1;
+      struct resmsg rsm;
+	    while(1)
+	    {
+	       printf("waiting for msg\n") ;
+               //rm.mtype=3;    
+               //msgsnd(mid,&rm,sizeof(struct student),0);
+	       msgrcv(mid,&rm,sizeof(struct student),-3,0);
+               printf("Messege Recived : - Type : %ld\n",rm.mtype);               
+               switch(rm.mtype)
+               {
+	           case 1:
+                     *stptr=rm.st;
+	             *no_of_rec+=1;
+	             stptr++;
+	             rsm.mtype=4;
+	             strcpy(rsm.msg,"Inserted");    
+	             msgsnd(mid,&rsm,50,0);
+                     break;
+                  case 2:
+                      temp = (struct student *)(no_of_rec+1);
+                      for(i=0;i<*no_of_rec;i++)
+                      {
+                            if(strcmp((temp+i)->name,rm.st.name)==0)
+                            {
+                                 *(temp+i)=rm.st;
+                                 rsm.mtype=4;
+	                         strcpy(rsm.msg,"Updated");    
+	                         msgsnd(mid,&rsm,50,0);
+                            }                      
+                      }
+                      break;
+                  case 3:
+                     stptr = (struct student *)(no_of_rec+1);
+		     lseek(fd,0,0);
+		     for(i=0;i<*no_of_rec;i++)
+		     {
+		         write(fd,stptr+i,sizeof(st));
+		     }
+                     close(fd);
+                     printf("Exiting\n");
+                     rm.mtype=7;
+                     msgsnd(mid,&rm,sizeof(struct student),0);
+                     sleep(1);
+		     exit(0);         
+               }   
+	      
+	    }   
+    }
+    else
+    {
+        char *arg[]={"cl",NULL};
+        execvp("./cl",arg);
+    }
+}    
+

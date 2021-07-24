@@ -1,0 +1,315 @@
+// appending to string
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str;
+  std::string str2="Writing ";
+  std::string str3="print 10 and then 5 more";
+
+  // used in the same order as described above:
+  str.append(str2);                       // "Writing "
+  str.append(str3,6,3);                   // "10 "
+  str.append("dots are cool",5);          // "dots "
+  str.append("here: ");                   // "here: "
+  str.append(10u,'.');                    // ".........."
+  str.append(str3.begin()+8,str3.end());  // " and then 5 more"
+  str.append<int>(5,0x2E);                // "....."
+
+  std::cout << str << '\n';
+  return 0;
+}
+
+
+// string::assign
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str;
+  std::string base="The quick brown fox jumps over a lazy dog.";
+
+  // used in the same order as described above:
+
+  str.assign(base);
+  std::cout << str << '\n';
+
+  str.assign(base,10,9);
+  std::cout << str << '\n';         // "brown fox"
+
+  str.assign("pangrams are cool",7);
+  std::cout << str << '\n';         // "pangram"
+
+  str.assign("c-string");
+  std::cout << str << '\n';         // "c-string"
+
+  str.assign(10,'*');
+  std::cout << str << '\n';         // "**********"
+
+  str.assign<int>(10,0x2D);
+  std::cout << str << '\n';         // "----------"
+
+  str.assign(base.begin()+16,base.end()-12);
+  std::cout << str << '\n';         // "fox jumps over"
+
+  return 0;
+}
+Edit & Run
+
+
+
+// string::at
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str ("Test string");
+  for (unsigned i=0; i<str.length(); ++i)
+  {
+    std::cout << str.at(i);
+  }
+  return 0;
+}
+
+// comparing apples with apples
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str1 ("green apple");
+  std::string str2 ("red apple");
+
+  if (str1.compare(str2) != 0)
+    std::cout << str1 << " is not " << str2 << '\n';
+
+  if (str1.compare(6,5,"apple") == 0)
+    std::cout << "still, " << str1 << " is an apple\n";
+
+  if (str2.compare(str2.size()-5,5,"apple") == 0)
+    std::cout << "and " << str2 << " is also an apple\n";
+
+  if (str1.compare(6,5,str2,4,5) == 0)
+    std::cout << "therefore, both are apples\n";
+
+  return 0;
+}
+
+
+
+// string::copy
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  char buffer[20];
+  std::string str ("Test string...");
+  std::size_t length = str.copy(buffer,6,5);
+  buffer[length]='\0';
+  std::cout << "buffer contains: " << buffer << '\n';
+  return 0;
+}
+
+
+// strings and c-strings
+#include <iostream>
+#include <cstring>
+#include <string>
+
+int main ()
+{
+  std::string str ("Please split this sentence into tokens");
+
+  char * cstr = new char [str.length()+1];
+  std::strcpy (cstr, str.c_str());
+
+  // cstr now contains a c-string copy of str
+
+  char * p = std::strtok (cstr," ");
+  while (p!=0)
+  {
+    std::cout << p << '\n';
+    p = std::strtok(NULL," ");
+  }
+
+  delete[] cstr;
+  return 0;
+}
+
+// strings and c-strings
+#include <iostream>
+#include <cstring>
+#include <string>
+
+int main ()
+{
+  std::string str ("Please split this sentence into tokens");
+
+  char * cstr = new char [str.length()+1];
+  std::strcpy (cstr, str.c_str());
+
+  // cstr now contains a c-string copy of str
+
+  char * p = std::strtok (cstr," ");
+  while (p!=0)
+  {
+    std::cout << p << '\n';
+    p = std::strtok(NULL," ");
+  }
+
+  delete[] cstr;
+  return 0;
+}
+
+// string::data
+#include <iostream>
+#include <string>
+#include <cstring>
+
+int main ()
+{
+  int length;
+
+  std::string str = "Test string";
+  char* cstr = "Test string";
+
+  if ( str.length() == std::strlen(cstr) )
+  {
+    std::cout << "str and cstr have the same length.\n";
+
+    if ( memcmp (cstr, str.data(), str.length() ) == 0 )
+      std::cout << "str and cstr have the same content.\n";
+  }
+  return 0;
+}
+
+
+
+// string::push_back
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main ()
+{
+  std::string str;
+  std::ifstream file ("test.txt",std::ios::in);
+  if (file) {
+    while (!file.eof()) str.push_back(file.get());
+  }
+  std::cout << str << '\n';
+  return 0;
+}
+
+
+// string::pop_back
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str ("hello world!");
+  str.pop_back();
+  std::cout << str << '\n';
+  return 0;
+}
+
+
+
+// replacing in a string
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string base="this is a test string.";
+  std::string str2="n example";
+  std::string str3="sample phrase";
+  std::string str4="useful.";
+
+  // replace signatures used in the same order as described above:
+
+  // Using positions:                 0123456789*123456789*12345
+  std::string str=base;           // "this is a test string."
+  str.replace(9,5,str2);          // "this is an example string." (1)
+  str.replace(19,6,str3,7,6);     // "this is an example phrase." (2)
+  str.replace(8,10,"just a");     // "this is just a phrase."     (3)
+  str.replace(8,6,"a shorty",7);  // "this is a short phrase."    (4)
+  str.replace(22,1,3,'!');        // "this is a short phrase!!!"  (5)
+
+  // Using iterators:                                               0123456789*123456789*
+  str.replace(str.begin(),str.end()-3,str3);                    // "sample phrase!!!"      (1)
+  str.replace(str.begin(),str.begin()+6,"replace");             // "replace phrase!!!"     (3)
+  str.replace(str.begin()+8,str.begin()+14,"is coolness",7);    // "replace is cool!!!"    (4)
+  str.replace(str.begin()+12,str.end()-4,4,'o');                // "replace is cooool!!!"  (5)
+  str.replace(str.begin()+11,str.end(),str4.begin(),str4.end());// "replace is useful."    (6)
+  std::cout << str << '\n';
+  return 0;
+}
+
+
+
+// string::reserve
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main ()
+{
+  std::string str;
+
+  std::ifstream file ("test.txt",std::ios::in|std::ios::ate);
+  if (file) {
+    std::ifstream::streampos filesize = file.tellg();
+    str.reserve(filesize);
+
+    file.seekg(0);
+    while (!file.eof())
+    {
+      str += file.get();
+    }
+    std::cout << str;
+  }
+  return 0;
+}
+
+
+
+// string::size
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str ("Test string");
+  std::cout << "The size of str is " << str.size() << " bytes.\n";
+  return 0;
+}
+
+
+// string::substr
+#include <iostream>
+#include <string>
+
+int main ()
+{
+  std::string str="We think in generalities, but we live in details.";
+                                           // (quoting Alfred N. Whitehead)
+
+  std::string str2 = str.substr (3,5);     // "think"
+
+  std::size_t pos = str.find("live");      // position of "live" in str
+
+  std::string str3 = str.substr (pos);     // get from "live" to the end
+
+  std::cout << str2 << ' ' << str3 << '\n';
+
+  return 0;
+}
+
+
+

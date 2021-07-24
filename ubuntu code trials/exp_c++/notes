@@ -1,0 +1,11 @@
+__libc_start_main (main=0x8048e39 <main()>, argc=1, argv=0xbffff194, init=0x80491d0 <__libc_csu_init>, fini=0x8049240
+<__libc_csu_fini>, 
+    rtld_fini=0xb7fed180 <_dl_fini>, stack_end=0xbffff18c) at libc-start.c:321
+    (gdb) bt
+#0  __libc_start_main (main=0x8048e39 <main()>, argc=1, argv=0xbffff194, init=0x80491d0 <__libc_csu_init>,
+    fini=0x8049240 <__libc_csu_fini>, 
+        rtld_fini=0xb7fed180 <_dl_fini>, stack_end=0xbffff18c) at libc-start.c:321
+#1  0x08048b01 in _start ()
+        (gdb) p init          
+        $1 = (int (*)(int, char **, char **)) 0x80491d0 <__libc_csu_init>
+

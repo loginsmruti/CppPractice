@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+#include<sys/stat.h>
+#include<fcntl.h>
+int main()
+{
+  //int i;
+
+ char data[50];
+
+ int fd1=open("ServerFifo",O_RDWR);
+ int fd2=open("ClientFifo",O_RDWR);
+  do
+  {
+ // READ THE DATA FROM USER
+ printf("\n Enter the data =");
+  scanf("%s",data);
+
+  //write data to server
+   write(fd2,data,strlen(data));
+
+ // read the data from server
+ int n=read(fd1,data,50);
+   data[n]='\0';
+
+  // write the data to user
+ printf("server response is ...%s",data);
+  }while(strcmp(data,"exit")!=0);
+   return 0;
+}

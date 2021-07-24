@@ -1,0 +1,17 @@
+ #include "f6c.h"
+      int main()
+      {
+         struct student var;
+        int fp;
+       printf("\n reading the file \n\n");
+   
+        fp=open("new",O_RDONLY);
+        printf("id\t | name\t |address \t| fee \n");
+         
+        while(read(fp,&var,sizeof(struct student)))
+         {
+            printf("%d\t %s\t %s\t %ld\n",var.id,var.name,var.address,var.fee);
+
+         }
+         close(fp);
+     }

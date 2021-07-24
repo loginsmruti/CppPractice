@@ -1,0 +1,104 @@
+#include "structure.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+void ReadFromFile();
+void WriteStructureToFile(struct stu *);
+
+void ReadFromFile()
+{
+  FILE *p1;
+  struct stu *var, st;
+  var= &st;
+  p1 = fopen("Student.dat","rb");
+  if(p1 == NULL)
+    {
+      printf("\n\tThere Is Something Problem In Opening File ...");
+      exit(0);
+    }
+     printf("\n\n\t=========================================================================================================");
+     printf("\n\tName\t\tAge\t\tRoll No\t\tDate\t\tMonth\t\tYear");
+     printf("\n\t=========================================================================================================");
+     fread(var , sizeof(st) ,1 , p1);
+
+   while(!feof(p1))
+   {
+       printf("\n\t%s\t\t%d\t\t%d\t\t%d\t\t%s\t\t%d",var->name,var->age,var->roll_no,var->dob.date,var->dob.month,var->dob.year);
+       fread(var , sizeof(st) ,1 , p1);
+   }
+    
+   printf("\n\t=========================================================================================================\n\n");
+   fclose(p1);
+}
+
+
+void WriteStructureToFile(struct stu *var)
+{   
+   char ch;
+   FILE *p;
+//    struct stu st;
+//     var = &st;
+   p = fopen("Student.dat","wb");
+   if(p == NULL)
+    {
+      printf("\n\tThere Is Something Problem In Opening File ...");
+      exit(0);
+    }
+  printf("\n\n\t ....................Enter Student Related Data's ...............");
+   
+  while(1)
+  { 
+   /*var =(struct stu*)malloc(sizeof(struct stu));
+    if(var==NULL)
+     {
+       printf("\n\tOutOfMemory Space Error....");
+       exit(0);
+     } */
+    printf("\n\tEnter The Student Name :");
+    scanf("%s",var->name);
+    //fgets(var->name,17,stdin);
+    getchar();
+    
+    printf("\n\tEnter The Student Age :");
+    scanf("%d",&var->age);
+    getchar();
+
+    printf("\n\tEnter The Student Roll :");
+    scanf("%d",&var->roll_no);
+     getchar();
+    printf("\n\tEnter Student Birth Date :");
+    scanf("%hd",&var->dob.date);
+    getchar();
+ 
+    printf("\n\tEnter Student Month Of Birth :");
+    scanf("%s",var->dob.month);
+    getchar();
+
+    printf("\n\tEnter Student Birth Year:");
+    scanf("%hd",&var->dob.year);
+    getchar();   
+
+    fwrite(var,sizeof(struct stu),1,p);
+    //free(var);      
+    printf("\n\tEnter Your Choice (Y/y)For Again Student Entry (N/n)To Exit ... :");
+    ch=getchar();
+      if(ch=='N'|| ch=='n')
+           break;    
+     
+      
+    printf("\n\t.....********......");
+    //return p;
+  } 
+   fclose(p);
+}
+
+int main()
+{
+   int i;
+   struct stu var, *sptr;
+   sptr=&var;
+ //  FILE *p ,*p1;
+   WriteStructureToFile(sptr);
+   ReadFromFile();
+ return 0;
+}

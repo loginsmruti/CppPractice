@@ -1,0 +1,1 @@
+Please copy contents to "copy.txt".

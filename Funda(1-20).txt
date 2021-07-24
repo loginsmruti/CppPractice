@@ -1,0 +1,506 @@
+1. Program to calculate the factorial of a number 
+2. Program to calculate the sum digits of a number 
+3. Program to reverse a number 
+4. Program to check the number is strong number or not. 
+5. Program to calculate the prime factors of a numbers 
+6. Program to check given number is armstrong or not 
+7. Program to check given number is palendrome or not 
+8. Program to add between any two numbers using loop 
+9. Program to calculate daily expenditure if monthely expenditure is 
+given using loop. 
+10. Program to count number of bits are set to 1 in an integer. 
+11. Program to calculate G.C.D of any two numbers 
+12. Program to calculate L.C.M of two numbers.  
+13. Program to calculate fibonacci series  
+14. Program to calculate string palindrome 
+15. Program to check the number is Prime number or not  
+16. Program to find largest number in an array 
+17. Program to find Second largest number in an array 
+18. Program to  remove duplicate elements in an array 
+19. Program to convert decimal to binary 
+20. Program to convert binary to decimal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Program to calculate the factorial of a number 
+main() 
+{ 
+        int x,n; 
+        printf("Enter a number :"); 
+        scanf("%d",&n); 
+        x=fact(n); 
+        printf("%d",x); 
+} 
+int fact(int n) 
+{ 
+        int f=1; 
+        while(n>0) 
+        { 
+                f=f*n; 
+                n--; 
+        } 
+        return f; 
+} 
+ 
+2. Program to calculate the sum digits of a number 
+ 
+main() 
+{ 
+        int x,n; 
+        printf("Enter a number :"); 
+        scanf("%d",&n); 
+        x=sum_digit(n); 
+        printf("%d",x); 
+} 
+int sum_digit(int n) 
+{ 
+        int s=0; 
+        while(n>0) 
+        { 
+                s=s + n%10; 
+                n=n/10; 
+        } 
+        return s; 
+} 
+3. Program to reverse a number 
+ 
+main() 
+{ 
+        int x,n; 
+        printf("Enter a number :"); 
+        scanf("%d",&n); 
+        x=reverse(n); 
+        printf("%d",x); 
+} 
+int reverse(int n) 
+{ 
+        int s=0; 
+        while(n>0) 
+        { 
+                s=s *10 + n%10; 
+                n=n/10; 
+        } 
+        return s; 
+} 
+ 
+4. Program to check the number is strong number or not. 
+main() 
+{ 
+        int x,n; 
+        printf("Enter a number :"); 
+        scanf("%d",&n); 
+        x=strong(n); 
+        if(x==n) 
+                printf("Strong"); 
+        else 
+                printf("Not strong"); 
+} 
+int strong(int n) 
+{ 
+        int s=0,r,f; 
+        while(n>0) 
+        { 
+                r=n%10; 
+                f=fact(r); 
+                s=s+f; 
+                n=n/10; 
+        } 
+        return s; 
+} 
+int fact(int n) 
+{ 
+        int f=1; 
+        while(n>0) 
+        { 
+                f=f*n; 
+                n--; 
+        } 
+        return f; 
+} 
+5. Program to calculate the prime factors of a numbers 
+main() 
+{ 
+        int x,n; 
+        printf("Enter a number :"); 
+        scanf("%d",&n); 
+        prime_factors(n); 
+} 
+int prime_factors(int n) 
+{ 
+        int i=1,k; 
+        while(i<=n) 
+        { 
+                if(n%i==0) 
+                { 
+                        k=check_prime(i); 
+                        if(k!=0) 
+                                printf("%d ",k); 
+                } 
+                i++; 
+        } 
+} 
+int check_prime(int n) 
+{ 
+        int i=1; 
+        int c=0; 
+        while(i<=n) 
+        { 
+                if(n%i==0) 
+                        c++; 
+                i++; 
+        } 
+        if(c==2) 
+                return n; 
+        else 
+                return 0; 
+} 
+6. Program to check given number is armstrong or not 
+main() 
+{ 
+        int n,x; 
+        printf("Enter a number:");    
+        scanf("%d",&n); 
+        x=armstrong(n); 
+        if(x==n) 
+                printf("Arm strong"); 
+        else 
+                printf("Not arm strong"); 
+} 
+ 
+int armstrong(int num) 
+{ 
+        int sum=0,r; 
+        while(num!=0) 
+        { 
+                r=num%10; 
+                num=num/10; 
+                sum=sum+(r*r*r); 
+        } 
+        return sum; 
+} 
+7. Program to check given number is palendrome or not 
+main() 
+{ 
+        int n,x; 
+        printf("Enter a number:"); 
+        scanf("%d",&n); 
+        x=palendrome(n); 
+        if(x==n) 
+                printf("Palendrome "); 
+        else 
+                printf("Not palendrome "); 
+} 
+ 
+int palendrome(int num) 
+{ 
+        int r=0; 
+        while(num>0) 
+        { 
+                r=r* 10 + num%10; 
+                num=num/10; 
+        } 
+        return r; 
+} 
+8. Program to add between any two numbers using loop 
+main() 
+{ 
+  int x; 
+  int a,b; 
+  printf("Enter any two numbers :"); 
+  scanf("%d%d",&a,&b); 
+  x=add(a,b); 
+  printf("%d ",x); 
+} 
+int add(int a,int b) 
+{ 
+  while(a>0) 
+  { 
+    b++; 
+    a--; 
+  } 
+  return b; 
+} 
+9. Program to calculate daily expenditure if monthely expenditure is 
+given using loop. 
+main() 
+{ 
+  int x,n; 
+  printf("Enter monthely expenditure :"); 
+  scanf("%d",&n); 
+  x=daily_exp(n); 
+  printf("%d ",x); 
+   
+} 
+int daily_exp(int n) 
+{ 
+  int c=0; 
+  while(n>0) 
+  { 
+    c++; 
+    n=n-30; 
+  } 
+  return c; 
+} 
+ 
+10. Program to count number of bits are set to 1 in an integer. 
+ 
+main() 
+{ 
+ 
+  int x,n; 
+  printf("Enter a number :"); 
+  scanf("%d",&n); 
+  x=bit_count(n); 
+  printf("%d ",x); 
+} 
+int bit_count(int n) 
+{ 
+  int c=0; 
+  while(n>0) 
+  { 
+    c++; 
+    n=n&n-1; 
+  } 
+  return c; 
+} 
+11. Program to calculate G.C.D of any two numbers 
+main() 
+{ 
+ 
+        int n1,n2,x; 
+        printf("Enter two numbers:"); 
+        scanf("%d%d",&n1,&n2); 
+        x=gcd(n1,n2); 
+        printf("%d ",x); 
+} 
+int gcd(int n1,int n2) 
+{ 
+ 
+        while(n1!=n2) 
+        { 
+                if(n1>n2) 
+                        n1=n1-n2; 
+                else 
+                        n2=n2-n1; 
+        } 
+        return n1; 
+} 
+12. Program to calculate L.C.M of two numbers.  
+main() 
+{ 
+ 
+        int n1,n2,x; 
+        printf("Enter two numbers:"); 
+        scanf("%d%d",&n1,&n2); 
+        x=lcm(n1,n2); 
+        printf("%d ",x); 
+} 
+int lcm(int n1,int n2) 
+{ 
+        int x,y; 
+        x=n1,y=n2; 
+        while(n1!=n2) 
+        { 
+                if(n1>n2) 
+                        n1=n1-n2; 
+                else 
+                        n2=n2-n1; 
+        } 
+        return x*y/n1; 
+} 
+13. Program to calculate fibonacci series  
+main() 
+{ 
+        int n; 
+        printf("Enter the number range:"); 
+        scanf("%d",&n); 
+        fibo(n); 
+} 
+int fibo(int n) 
+{ 
+        int i=0,j=1,k=2,r,f; 
+        printf("%d %d ", i,j); 
+        while(k<n) 
+        { 
+                f=i+j; 
+                i=j; 
+                j=f; 
+                printf(" %d",j); 
+                k++; 
+        } 
+} 
+14. Program to calculate string palindrome 
+main() 
+{ 
+        char x[100],y[100]; 
+        printf("Enter a string :"); 
+        scanf("%s",x); 
+        strcpy(y,x); 
+ 
+        check_palindrome(x); 
+        if(strcmp(x,y)==0) 
+                printf("Palindrome"); 
+        else 
+                printf("Not Palindrome"); 
+} 
+int check_palindrome(char *x) 
+{ 
+        int len=strlen(x); 
+        int i; 
+        char temp; 
+        for(i=0;i<len/2;i++) 
+        { 
+                temp=x[i]; 
+                x[i]=x[len-i-1]; 
+                x[len-i-1]=temp; 
+        } 
+} 
+15. Program to check the number is Prime number or not  
+main() 
+{ 
+        int n,k; 
+        printf("Enter a number:");  
+        scanf("%d",&n); 
+        k=check_prime(n); 
+        if(k==2) 
+                printf("Prime"); 
+        else 
+                printf("Not prime"); 
+} 
+int check_prime(int n) 
+{ 
+        int i=1,c=0; 
+        while(i<=n) 
+        { 
+                if(n%i==0) 
+                        c++; 
+                i++; 
+        } 
+        return c; 
+} 
+16. Program to find largest number in an array 
+main() 
+{ 
+        int a[]={15,67,25,90,40}; 
+        int k; 
+        k=large_number(a); 
+        printf("%d ",k); 
+} 
+int large_number(int a[5]) 
+{ 
+        int i,big; 
+        big=a[0]; 
+        for(i=1;i<5;i++) 
+        { 
+                if(big<a[i]) 
+                big=a[i]; 
+        } 
+        return big; 
+} 
+17. Program to find Second largest number in an array 
+main() 
+{ 
+        int a[]={15,67,25,90,40}; 
+        int k; 
+        k=large_number(a); 
+        printf("%d ",k); 
+} 
+int large_number(int un[5]) 
+{ 
+        int big1,big2; 
+        int i; 
+        big1 = un[0]; 
+        for ( i=1;i<5;++i ) 
+        if ( big1 < un[i] ) 
+                big1 = un[i]; 
+        if ( big1!=un[0] ) 
+                big2=un[0]; 
+        else 
+                big2=un[1]; 
+ 
+        for(i=1; i<5;++i ) 
+                if (big1!=un[i] && big2 < un[i] ) 
+                          big2=un[i]; 
+        return big2; 
+} 
+18. Program to  remove duplicate elements in an array 
+main() 
+{ 
+        int i,k; 
+        int x[10]={5,7,2,8,9,3,3,6,7,20}; 
+        k=remove_duplicate(x); 
+        for(i=0;i<k;i++) 
+        { 
+                printf(" %d",x[i]); 
+        } 
+ 
+} 
+int remove_duplicate(int p[10]) 
+{ 
+        int size=10,i,j,k; 
+        for(i=0;i<size;i++) 
+        { 
+                for(j=0;j<size;j++) 
+                { 
+                        if(i==j) 
+                        { 
+                                continue; 
+                        } 
+                        else 
+                        if(*(p+i)==*(p+j)) 
+                        { 
+                                k=j; 
+                                size--; 
+                                while(k < size) 
+                                { 
+                                        *(p+k)=*(p+k+1); 
+                                        k++; 
+                                } 
+                                j=0; 
+                        } 
+              } 
+        } 
+        return size; 
+} 
+ 
+19. Program to convert from decimal to binary 
+main() 
+{ 
+        int n; 
+        printf("Enter a number :"); 
+        scanf("%d",&n); 
+        decimal_binary(n); 
+ 
+} 
+int decimal_binary(int n) 
+{ 
+        int m,no=0,a=1,rem; 
+        m=n; 
+        while(n!=0) 
+        { 
+                rem=n%2; 
+                no=no+rem*a; 
+                n=n/2; 
+                a=a*10; 
+        } 
+        printf("%d",no); 
+} 
+20. Program to convert binary to decimal 
+main() 
+{ 
+        int n; 
+        printf("Enter data in binary format :"); 
+        scanf("%d",&n); 
+        binary_decimal(n); 
+ 
+} 
+int binary_decimal(int n) 
+{ 
+        int j=1,rem,n1=0; 
+        while(n!=0) 
+        { 
+                rem=n%10; 
+                n1=n1+rem*j; 
+                j=j*2; 
+                n=n/10; 
+        } 
+        printf("%d",n1); 
+}    

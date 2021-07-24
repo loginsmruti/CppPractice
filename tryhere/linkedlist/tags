@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Append	singleLinkedList.cc	/^void LinkedList::Append(int data)$/;"	f	class:LinkedList
+Insert	singleLinkedList.cc	/^void LinkedList::Insert(int data)$/;"	f	class:LinkedList
+IsEmpty	singleLinkedList.cc	/^bool LinkedList::IsEmpty() const$/;"	f	class:LinkedList
+LINKED_LIST_H	singleLinkedList.hh	/^#define LINKED_LIST_H$/;"	d
+LinkedList	singleLinkedList.cc	/^LinkedList::LinkedList(): head(nullptr), tail(nullptr) $/;"	f	class:LinkedList
+LinkedList	singleLinkedList.cc	/^LinkedList::LinkedList(const LinkedList &list): LinkedList() \/\/ call base constructor$/;"	f	class:LinkedList
+LinkedList	singleLinkedList.hh	/^class LinkedList$/;"	c
+Node	singleLinkedList.hh	/^struct Node$/;"	s
+Print	singleLinkedList.cc	/^void LinkedList::Print() const$/;"	f	class:LinkedList
+data	singleLinkedList.hh	/^    int data;$/;"	m	struct:Node
+head	singleLinkedList.hh	/^        Node *head;$/;"	m	class:LinkedList
+main	singleLinkedList.cc	/^int main() $/;"	f
+next	singleLinkedList.hh	/^    Node *next = nullptr;$/;"	m	struct:Node
+operator +	singleLinkedList.cc	/^LinkedList operator+(const LinkedList &lhs, const LinkedList &rhs)$/;"	f
+operator +=	singleLinkedList.cc	/^LinkedList & LinkedList::operator+=(const LinkedList &rhs)$/;"	f	class:LinkedList
+operator =	singleLinkedList.cc	/^LinkedList & LinkedList::operator=(const LinkedList &other)$/;"	f	class:LinkedList
+swap	singleLinkedList.cc	/^void LinkedList::swap(LinkedList &other) $/;"	f	class:LinkedList
+tail	singleLinkedList.hh	/^        Node *tail; \/\/ allows O(1) append$/;"	m	class:LinkedList
+~LinkedList	singleLinkedList.cc	/^LinkedList::~LinkedList()$/;"	f	class:LinkedList

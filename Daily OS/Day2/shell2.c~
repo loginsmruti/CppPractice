@@ -1,0 +1,45 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void mysystem(char *command)
+{
+   if(fork())
+         wait();
+    else
+    {
+         char *p,*args[10],arr[6][10];
+         int count=0;
+    
+          p=strtok(command," ");
+          do
+           {
+               strcpy(arr[count],p);
+               args[count]=arr[count];
+                  count++;
+           }while(strtok(NULL," ");
+          args[count]=NULL;
+
+        execv(args[0],args);
+    }
+} 
+
+int main()
+{
+ char name[10];
+ printf("\n\tEnter Your Login Name : ");
+ scanf("%s",name);
+   while(1)
+   {
+  printf("\n\n%s ## ",name);
+  scanf("%s",command);
+   if(strcmp(command,"exit")!=0)
+   {
+  mysystem(command);
+   }  
+   else
+   {
+     exit(0);
+   }
+   return (0);
+}

@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<sys/ipc.h>
+#include<sys/types.h>
+struct msg
+{
+    int i;
+    char name;
+};
+struct mymsg
+{
+    long mtype;
+    struct msg m;
+};
+int main()
+{
+   
+    int mid;
+    struct mymsg msg;
+    mid=msgget(100,IPC_CREAT|0660);
+    //msgsnd(mid,&msg,sizeof(msg),0);
+    msgrcv(mid,&msg,sizeof(msg),1,0);
+    printf("message recieved..\n");
+    msg.mtype=2;
+    msgsnd(mid,&msg,sizeof(msg),0);
+    //msgctl(mid,IPC_RMID,NULL);
+}

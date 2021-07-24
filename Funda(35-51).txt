@@ -1,0 +1,970 @@
+35. Program  for Bubble sort  
+36. Program  for Selection sort  
+37. Program  for insertion sort 
+38. Program  for Quick Sort 
+39. Program  for Merge Sort 
+40. Program for Sequential search using array 
+41. Program for Sequential search  using linked list 
+42. Program for Binary search using array 
+43. Program for Binary search using linked list 
+44. Program to implement stack using linked list 
+45. Program to convert infix to prefix notation 
+46. Program to  Evaluate postfix notation 
+47. Program to implement Queue using linked list 
+48. Program for Dqueue 
+49. Program for Priority Queue 
+50. Program to traverse linked list in reverse order. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+35. Program  for Bubble sort  
+main() 
+{ 
+        int a[5]={4,9,40,2,25}; 
+        int i; 
+        bubble_sort(a); 
+        for(i=0;i<5;i++) 
+                printf("%d ",a[i]); 
+} 
+ 
+int bubble_sort(int a[5]) 
+{ 
+        int i,j,temp; 
+        for(i=0;i<5;i++) 
+        { 
+                for(j=0;j<5-i;j++) 
+                { 
+                        if(a[j]>a[j+1]) 
+                        { 
+                                temp=a[j]; 
+                                a[j]=a[j+1]; 
+                                a[j+1]=temp; 
+                        } 
+                } 
+        } 
+} 
+36. Program  for Selection sort  
+main() 
+{ 
+        int a[5]={4,9,40,2,25}; 
+        int i; 
+        selection_sort(a); 
+        for(i=0;i<5;i++) 
+                printf("%d ",a[i]); 
+} 
+int selection_sort(int a[5]) 
+{ 
+        int i,j,temp; 
+        for(i=0;i<5;i++) 
+        { 
+                for(j=i+1;j<5;j++) 
+                { 
+                        if(a[i]>a[j]) 
+                        { 
+                                temp=a[i]; 
+                                a[i]=a[j]; 
+                                a[j]=temp; 
+                        } 
+                } 
+        } 
+} 
+37. Program  for Insertion sort 
+ 
+main() 
+{ 
+        int a[5]={4,9,40,2,25}; 
+        int i; 
+        insert_sort(a); 
+        for(i=0;i<5;i++) 
+                printf("%d ",a[i]); 
+} 
+int insert_sort(int a[5]) 
+{ 
+        int i,j,k,temp; 
+        for(i=1;i<5;i++) 
+        { 
+                for(j=0;j<i;j++) 
+                { 
+                        if(a[i]<a[j]) 
+                        { 
+                                temp=a[i]; 
+                                for(k=i;k>j;k--) 
+                                { 
+                                        a[k]=a[k-1]; 
+ 
+                                } 
+                                a[j]=temp; 
+                        } 
+                } 
+        } 
+} 
+38. Program  for quick sort 
+ 
+main() 
+{ 
+        int x[5]={5,9,2,20,6}; 
+        int i; 
+        quick_sort(x,0,4); 
+        for(i=0;i<5;i++) 
+                printf("%d ",x[i]); 
+} 
+quick_sort(int x[10],int first,int last) 
+{ 
+        int pivot,j,temp,i; 
+        if(first<last) 
+        { 
+                pivot=first; 
+                i=first; 
+                j=last; 
+                while(i<j) 
+                { 
+                         while(x[i]<=x[pivot]&&i<last) 
+                                i++; 
+                        while(x[j]>x[pivot]) 
+                                j--; 
+                        if(i<j) 
+                        { 
+                                temp=x[i]; 
+                                x[i]=x[j]; 
+                                x[j]=temp; 
+                        } 
+                } 
+                temp=x[pivot]; 
+                x[pivot]=x[j]; 
+                x[j]=temp; 
+                quick_sort(x,first,j-1); 
+                quick_sort(x,j+1,last); 
+    } 
+} 
+39. Program  for Merge Sort 
+ 
+40. Program for sequential search 
+ 
+main() 
+{ 
+        int a[]={6,5,3,20,55}; 
+        int i,flag=0,n; 
+        printf("Enter number to search :"); 
+        scanf("%d",&n); 
+        for(i=0;i<5;i++) 
+        { 
+                if(a[i]==n) 
+                { 
+                        flag=1; 
+                        break; 
+                } 
+        } 
+        if(flag==1) 
+                printf("Found\n"); 
+        else 
+                printf("Not found\n"); 
+} 
+41. Program for Sequential search  using linked list 
+struct xxx 
+{ 
+        int data; 
+        struct xxx *ad; 
+}; 
+struct xxx *create_linkedlist(); 
+main() 
+{ 
+        int k; 
+        struct xxx *b; 
+        b=create_linkedlist(); 
+        k=search(b); 
+        if(k==1) 
+                printf("Found "); 
+        else 
+                printf("Not found\n"); 
+} 
+struct xxx *create_linkedlist() 
+{ 
+        char ch[10]; 
+        struct xxx *p,*q,*r; 
+        p=malloc(sizeof(struct xxx)); 
+        printf("Enter data :"); 
+        scanf("%d",&p->data); 
+        r=p; 
+        while(1) 
+        { 
+                printf("Do u continue yes/no :"); 
+                scanf("%s",ch); 
+                if(strcmp(ch,"no")==0) 
+                        break; 
+                q=malloc(sizeof(struct xxx)); 
+                p->ad=q; 
+                p=q; 
+                printf("Enter data :"); 
+                scanf("%d",&p->data); 
+        } 
+        p->ad=0; 
+        return r; 
+} 
+int search(struct xxx *p) 
+{ 
+        int n,flag=0; 
+        printf("Enter number to search :"); 
+        scanf("%d",&n); 
+        while(p!=0) 
+        { 
+                if(p->data==n) 
+                { 
+                        flag=1; 
+                        break; 
+                } 
+                p=p->ad; 
+        } 
+        return flag; 
+} 
+ 
+ 
+42. Binary Search using an Array 
+ 
+void main() 
+{ 
+    int a[10],i,n,m,c=0,l,u,mid; 
+    printf("Enter the size of an array->"); 
+    scanf("%d",&n); 
+    printf("\nEnter the elements of the array->"); 
+    for(i=0;i<n;i++) 
+    { 
+    scanf("%d",&a[i]); 
+    } 
+    printf("\nThe elements of an array are->"); 
+    for(i=0;i<n;i++) 
+    { 
+    printf(" %d",a[i]); 
+    } 
+    printf("\nEnter the number to be search->"); 
+    scanf("%d",&m); 
+    l=0,u=n-1; 
+    while(l<=u) 
+    { 
+    mid=(l+u)/2; 
+    if(m==a[mid]) 
+    { 
+      c=1; 
+      break; 
+    } 
+    else 
+    if(m<a[mid]) 
+    { 
+      u=mid-1; 
+    } 
+    else 
+      l=mid+1; 
+    } 
+    if(c==0) 
+    printf("\nThe number is not in the list"); 
+    else 
+    printf("\nThe number is found"); 
+ } 
+43. Program for Binary search using linked list 
+ 
+struct xxx 
+{ 
+  int roll; 
+  struct xxx *ad; 
+}; 
+  struct xxx *create(); 
+main() 
+{ 
+  int status; 
+  int u,n; 
+  struct xxx *b; 
+  b=create(); 
+  visit(b); 
+  selection_sort(b); 
+  printf("\n"); 
+  visit(b); 
+  u=count(b); 
+  printf("Enter number to search :"); 
+  scanf("%d",&n); 
+  status=binary_search(b,1,u,n); 
+  if(status==1) 
+    printf("Found\n"); 
+  else 
+    printf("Not found\n"); 
+} 
+int binary_search(struct xxx *p,int l,int u,int n) 
+{ 
+  struct xxx *r=p; 
+  int mid,i,f=0; 
+  while(l<=u && r!=0) 
+  { 
+    mid=(l+u)/2; 
+    for(i=1;i<mid;i++) 
+    { 
+      r=r->ad; 
+    }     
+    if(n==r->roll) 
+    {   
+      f=1; 
+      break; 
+    }   
+    if(n<r->roll) 
+    {  u=mid-1; 
+    } 
+    if(n>r->roll) 
+    { 
+      l=mid+1; 
+    } 
+    r=p; 
+  } 
+  return f; 
+} 
+ 
+int count(struct xxx *p) 
+{ 
+  int c=0; 
+  while(p!=0) 
+  { 
+    c++; 
+    p=p->ad; 
+  } 
+  return c; 
+} 
+int selection_sort(struct xxx *p) 
+{   
+  struct xxx *q=p->ad; 
+  int temp; 
+  while(p->ad!=0) 
+  { 
+    while(q!=0) 
+    { 
+      if(p->roll>q->roll) 
+      { 
+        temp=p->roll; 
+        p->roll=q->roll; 
+        q->roll=temp; 
+      } 
+      q=q->ad; 
+    } 
+    p=p->ad; 
+    q=p->ad; 
+  } 
+ 
+}   
+int visit(struct xxx *p) 
+{ 
+  while(p!=0) 
+  { 
+    printf("%d ",p->roll); 
+    p=p->ad; 
+  } 
+} 
+struct xxx *create() 
+{ 
+  struct xxx *p,*q,*r; 
+  char ch[10]; 
+  p=malloc(sizeof(struct xxx)); 
+  r=p; 
+  while(1) 
+  { 
+    printf("Enter roll :"); 
+    scanf("%d",&p->roll); 
+     
+    printf("Do u continue yes/No:"); 
+    scanf("%s",ch); 
+    if(strcmp(ch,"no")==0) 
+      break; 
+    q=malloc(sizeof(struct xxx)); 
+    p->ad=q; 
+    p=q; 
+  } 
+  p->ad=0; 
+  return r; 
+} 
+44. Program to implement stack using linked list 
+struct xxx 
+{ 
+  int roll; 
+  struct xxx *ad; 
+}; 
+  struct xxx *p=0; 
+main() 
+{ 
+  int x; 
+  do 
+  { 
+    printf("1 for push\n"); 
+    printf("2 for pop\n"); 
+    printf("0 for stop\n"); 
+    printf("Enter choice :"); 
+    scanf("%d",&x); 
+    if(x==1) 
+    { 
+      push(); 
+    } 
+    else 
+    if(x==2) 
+    { 
+      pop(); 
+    } 
+ 
+  }while(x!=0); 
+ 
+} 
+int pop() 
+{ 
+  if(p==0) 
+  { 
+    printf("Stack is empty\n"); 
+    return; 
+  } 
+  else 
+  { 
+    printf("%d \n",p->roll); 
+    p=p->ad; 
+  } 
+} 
+int push() 
+{ 
+  struct xxx *q; 
+  if(p==0) 
+  { 
+    p=malloc(sizeof(struct xxx)); 
+    printf("Enter roll :"); 
+    scanf("%d",&p->roll); 
+    p->ad=0; 
+  } 
+  else 
+  { 
+    q=malloc(sizeof(struct xxx)); 
+    q->ad=p; 
+    p=q; 
+    printf("Enter roll :"); 
+    scanf("%d",&p->roll); 
+  } 
+} 
+ 
+ 
+ 
+ 
+45. Program to convert infix to prefix notation 
+struct xxx 
+{ 
+  char data; 
+  struct xxx *ad; 
+}; 
+main() 
+{ 
+  int len; 
+  struct xxx *opd=0,*opr=0,*q; 
+  char x[50]; 
+  char y[50]; 
+  int i=0; 
+  printf("Enter Infix expression :"); 
+  scanf("%s",x); 
+  char *p=x+strlen(x)-1; 
+  int k1,k2; 
+   
+  for(i=strlen(x)-1;i>=0;i--) 
+  { 
+    if(*p>=48 && *p<=57) 
+    { 
+      if(opd==0) 
+      { 
+        opd=malloc(sizeof(struct xxx)); 
+        opd->data=*p; 
+        opd->ad=0; 
+      } 
+      else 
+      { 
+        q=malloc(sizeof(struct xxx)); 
+        q->ad=opd; 
+        opd=q; 
+        opd->data=*p; 
+      } 
+    } 
+    else 
+    { 
+      if(opr==0) 
+      { 
+        opr=malloc(sizeof(struct xxx)); 
+        opr->data=*p; 
+        opr->ad=0; 
+      } 
+      else 
+      { 
+        k1=check_precedence(*p); 
+        k2=check_precedence(opr->data); 
+        if(k1<=k2) 
+        { 
+          while(k1<=k2 && opr!=0) 
+          {   
+            q=malloc(sizeof(struct xxx)); 
+            q->ad=opd; 
+            opd=q; 
+             
+            opd->data=opr->data; 
+            opr=opr->ad; 
+            if(opr==0) 
+            {  opr=malloc(sizeof(struct xxx)); 
+              opr->ad=0; 
+              break; 
+           
+            } 
+            k2=check_precedence(opr->data); 
+             
+          } 
+          opr->data=*p; 
+           
+        } 
+        else 
+        {             
+          q=malloc(sizeof(struct xxx)); 
+          q->ad=opr; 
+          opr=q; 
+          opr->data=*p; 
+        } 
+    }//else 
+     
+  } //else 
+     
+    p--; 
+  }  //for 
+  while(opr!=0) 
+  { 
+    q=malloc(sizeof(struct xxx)); 
+    q->ad=opd; 
+    opd=q; 
+    opd->data=opr->data; 
+    opr=opr->ad; 
+  } 
+  memset(y,0,sizeof(y)); 
+  i=0; 
+  while(opd!=0) 
+  { 
+    y[i]=opd->data; 
+    i++; 
+    opd=opd->ad; 
+  } 
+  printf("%s ",y);  
+} 
+int check_precedence(int m) 
+{ 
+  switch(m) 
+  { 
+    case '+': 
+    case '-': 
+      return 1; 
+    case '/': 
+    case '*': 
+      return 2; 
+  } 
+} 
+46. Program to  Evaluate postfix notation 
+struct xxx 
+{ 
+  unsigned char data; 
+  struct xxx *ad; 
+}; 
+ 
+main() 
+{ 
+  unsigned char  a,b,c; 
+  struct xxx *st=0,*q; 
+  char x[100]; 
+  printf("Enter Post Expression:"); 
+  scanf("%s",x); 
+  char *p=x; 
+   
+  while(*p!=0) 
+  { 
+    if(*p>=48 && *p<=57) 
+    { 
+      if(st==0) 
+      { 
+        st=malloc(sizeof(struct xxx)); 
+        st->data=*p; 
+        st->ad=0; 
+      } 
+      else 
+      { 
+        q=malloc(sizeof(struct xxx)); 
+        q->ad=st; 
+        st=q; 
+        st->data=*p;   
+      } 
+    } 
+    else 
+    { 
+      b=st->data-48; 
+      st=st->ad; 
+      a=st->data-48; 
+       
+      if(*p=='*') 
+      { 
+        c=a*b; 
+         
+      } 
+      else 
+      if(*p=='/') 
+      { 
+        c=a/b; 
+      } 
+      else 
+      if(*p=='+') 
+      { 
+        c=a+b; 
+      } 
+      else 
+      if(*p=='-') 
+      { 
+        c=a-b; 
+      }   
+      st->data=c+48;     
+             
+    } 
+    p++; 
+  } 
+  printf("%d ", st->data-48); 
+ 
+} 
+47. Program to implement Queue using linked list 
+ 
+#include<stdio.h> 
+#include<malloc.h> 
+struct node 
+{ 
+    int info; 
+    struct node *next; 
+} ; 
+struct node *front, *rear; 
+void enqueue(int elt); 
+int dequeue(); 
+void display(); 
+void main() 
+{ 
+    int ch, elt; 
+    rear = NULL; 
+    front = NULL; 
+    while (1) 
+    { 
+        printf("1 Insert\n"); 
+        printf("2 Delete\n"); 
+        printf("3 Display\n"); 
+        printf("4 Exit\n"); 
+        printf("Enter your choice : "); 
+        scanf("%d", &ch); 
+        switch (ch) 
+        { 
+            case 1: 
+                  printf("Enter The Element Value\n"); 
+                  scanf("%d", &elt); 
+                  enqueue(elt); 
+                  break; 
+            case 2: 
+                 elt = dequeue(); 
+                 printf("The deleted element = %d\n", elt); 
+                 break; 
+            case 3: 
+                  display(); 
+                  break; 
+            default: 
+                   exit(0); 
+        } 
+    } 
+} 
+void enqueue(int elt) 
+{ 
+    struct node *p; 
+    p = (struct node*)malloc(sizeof(struct node)); 
+          p->info = elt; 
+          p->next = NULL; 
+         if (rear == NULL || front == NULL) 
+                 front = p; 
+           else 
+                    rear->next = p; 
+    rear = p; 
+} 
+int dequeue() 
+{ 
+    struct node *p; 
+    int elt; 
+    if (front == NULL || rear == NULL) 
+    { 
+        printf("\nUnder Flow"); 
+        exit(0); 
+    } 
+    else 
+    { 
+        p = front; 
+        elt = p->info; 
+        front = front->next; 
+        free(p); 
+    } 
+    return (elt); 
+} 
+void display() 
+{ 
+    struct node *t; 
+    t = front; 
+    while (front == NULL || rear == NULL) 
+    { 
+        printf("\nQueue is empty"); 
+        exit(0); 
+    } 
+    while (t != NULL) 
+    { 
+        printf("->%d", t->info); 
+        t = t->next; 
+    } 
+} 
+ 
+ 
+49. Program for Priority Queue 
+ 
+struct xxx 
+{ 
+  int pr; 
+  struct xxx *ad; 
+}; 
+  struct xxx *p=0; 
+main() 
+{ 
+  int x; 
+  do 
+  { 
+    printf("1 for add\n"); 
+    printf("2 for dele\n"); 
+    printf("3 for traverse\n"); 
+    printf("0 for stop\n"); 
+    printf("Enter  choice :"); 
+    scanf("%d",&x); 
+    if(x==1) 
+      add(); 
+    else 
+    if(x==2) 
+      dele(); 
+    else 
+    if(x==3) 
+      trav(); 
+  }while(x!=0); 
+} 
+int trav() 
+{ 
+  struct xxx *r=p; 
+  while(r!=0) 
+  { 
+    printf("%d ",r->pr); 
+    r=r->ad; 
+  } 
+} 
+int add() 
+{ 
+  struct xxx *q,*r,*m; 
+  if(p==0) 
+  { 
+    p=malloc(sizeof(struct xxx)); 
+    printf("Enter priority :"); 
+    scanf("%d",&p->pr); 
+    p->ad=0; 
+  } 
+  else 
+  { 
+    q=malloc(sizeof(struct xxx)); 
+    printf("Enter priority :"); 
+    scanf("%d",&q->pr); 
+    if(q->pr <= p->pr) 
+    { 
+      q->ad=p; 
+      p=q;   
+    }  
+    else 
+    { 
+      r=p; 
+      while(q->pr > r->pr) 
+      { 
+        m=r;   
+        if(r->ad==0) 
+        { 
+          r->ad=q; 
+          q->ad=0; 
+          return; 
+        } 
+        r=r->ad; 
+         
+      } 
+      m->ad=q; 
+      q->ad=r; 
+    } 
+ 
+  } 
+} 
+int dele() 
+{ 
+  struct xxx *r,*m; 
+  r=p; 
+  if(r==0) 
+  { 
+    printf("Stack is empty\n"); 
+    exit(0); 
+  } 
+  while(r->ad!=0) 
+  { 
+    m=r; 
+    r=r->ad; 
+  } 
+   
+  free(r); 
+  m->ad=0; 
+} 
+50. Traverse a linked list in reverse order 
+ 
+#include <stdio.h> 
+#define NODES 4 
+typedef struct list_head { 
+  struct node* head; 
+  struct node* tail; 
+} list_head; 
+ 
+typedef struct node { 
+  struct node* next; 
+  int value; 
+} node; 
+ 
+node n[NODES]; 
+ 
+list_head init_empty_list() 
+{ 
+  list_head h; 
+  h.head = 0; 
+  h.tail = 0; 
+  return h; 
+} 
+ 
+list_head init_list() 
+{ 
+  int i; 
+  list_head h; 
+  for (i=0; i<NODES-1; ++i) { 
+    n[i].next = &n[i+1]; 
+    n[i].value = i+1; 
+  } 
+  n[NODES-1].next = 0; 
+  n[NODES-1].value = NODES; 
+  h.head = &n[0]; 
+  h.tail = &n[NODES-1]; 
+  return h; 
+} 
+ 
+void print_list(list_head h) 
+{ 
+  node* p = h.head; 
+  while (p)  { 
+    printf("%d ", p->value); 
+    p = p->next; 
+  }  
+  printf("\n"); 
+} 
+ 
+list_head reverse_list(list_head h) 
+{ 
+  list_head nh; 
+  if ((h.head == 0) || (h.head->next ==0)) { 
+    return h; 
+  } 
+  nh.head = h.head->next; 
+  nh.tail = h.tail; 
+  nh = reverse_list(nh); 
+  h.head->next = 0; 
+  nh.tail->next = h.head; 
+  nh.tail = h.head; 
+  return nh; 
+} 
+  
+int main() 
+{ 
+  list_head head; 
+  head = init_list(); 
+  print_list(head); 
+  head = reverse_list(head); 
+  print_list(head); 
+  return 0; 
+} 
+ 
+ 
+ 
+51. Program to display the contents of a file using command line 
+argument 
+ 
+ 
+#include "fcntl.h" 
+main(int x, char *y[], char *z[]) 
+{ 
+        int i; 
+        char ch; 
+        if(x<2) 
+        { 
+                printf("Too few parameters\n"); 
+                exit(0); 
+        } 
+ 
+        for(i=1;i<x;i++) 
+        { 
+                int k=open(y[i],O_RDONLY); 
+                if(k==-1) 
+                { 
+                        printf("File not found\n"); 
+                        break; 
+                } 
+                while(read(k,&ch,1)) 
+                        printf("%c",ch); 
+                close(k); 
+        } 
+} 
+ 
+52. Calculate the age of a person after giving the date of the birth. 
+ 
+#include "time.h" 
+main() 
+{ 
+  char x[100],y[100]; 
+  int dd,mm,yy; 
+  int bd,bm,by; 
+  int nd,nm,ny; 
+  unsigned int t; 
+  struct tm *mytime; 
+  t=time(0); 
+  mytime=localtime(&t); 
+ 
+  dd=mytime->tm_mday; 
+  mm=mytime->tm_mon+1; 
+  yy=mytime->tm_year+1900; 
+   
+  printf("Enter birtd day,mon and year :"); 
+  scanf("%d%d%d",&bd,&bm,&by); 
+ 
+  if(dd>=bd) 
+    nd=dd-bd; 
+  else 
+  if(mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12) 
+  { 
+    dd=dd+31; 
+    nd=dd-bd; 
+  } 
+  else 
+  if(mm==4 || mm==6 || mm==9 || mm==11) 
+  { 
+    dd=dd+30; 
+    nd=dd-bd; 
+  }   
+  else 
+  if(mm==2) 
+  { 
+    dd=dd+28; 
+    nd=dd-bd; 
+  } 
+  if(mm>=bm) 
+  { 
+    nm=mm-bm; 
+  } 
+  else 
+  { 
+    mm=mm+12; 
+    yy=yy-1; 
+    nm=mm-bm; 
+  } 
+  ny=yy-by; 
+  printf("%d %d %d \n",ny,nm,nd); 
+} 

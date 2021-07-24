@@ -1,0 +1,718 @@
+
+78. Program for DFS 
+79. Program for BFS 
+80. Program to search an element using hash table 
+81. Program to search a string from hast table 
+82. Program to search an element using hash table using chaning 
+83. Shortest path using warshal's algorith 
+84. Shortest path using dijkstra's algorith 
+ 
+85. Find the path matrix of Graph 
+86. Program to read the current date and time 
+ 
+87. Program to read all files from current directory 
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+58. program to calculate the sum of the following series 
+1 - x + x2/2! + x3/3! --------to nth term 
+ 
+main() 
+{ 
+  int serise,square,fact=1,loop=1,loop1; 
+  float sum; 
+  float result=0; 
+  printf("Enter The serise "); 
+  scanf("%d",&serise); 
+  while(loop<=serise) 
+  { 
+    square=pow(loop,2); 
+    for(loop1=1;loop1<=loop;loop1++) 
+    { 
+      fact = fact * loop1; 
+    } 
+    sum=(float)square/fact; 
+    if(loop%2!=0) 
+      result = result + sum; 
+    else 
+      result = result - sum; 
+    fact=1; 
+    loop++; 
+  } 
+  printf("The summation Of the serise is %f\n",result); 
+} 
+ 
+60.Write a program to convert given ip address 192.168.3.35 into 
+192.168.003.035 
+ 
+ 
+#include<stdio.h> 
+int main() 
+{ 
+  char input[16]; 
+  char p[4][4]; 
+  int i,a,b,len; 
+  int j,c; 
+  printf("pl enter any ip address\n"); 
+  scanf("%s",input); 
+  a=0;b=0; 
+  for(i=0;input[i];i++) 
+  { 
+    if(input[i]!='.') 
+      p[a][b++]=input[i]; 
+    else 
+    { 
+      p[a][b]=0; 
+      a++; 
+      b=0; 
+    } 
+  } 
+  p[a][b]=0; 
+ 
+  for(a=0;a<4;a++) 
+  { 
+    len=strlen(p[a]); 
+    for(j=len-1;j>=0;j--) 
+      p[a][j+3-len]=p[a][j]; 
+    for(j=0;j<(3-len);p[a][j]='0',j++); 
+    p[a][3]=0; 
+  } 
+  input[0]=0; 
+  for(i=0;i<4;i++) 
+  { 
+    strcat(input,p[i]); 
+    strcat(input,"."); 
+  } 
+  input[15]=0; 
+  puts(input); 
+  return 0; 
+} 
+
+78. Program for DFS 
+struct xxx 
+{ 
+  int node; 
+  int total; 
+  int status; 
+  struct xxx *ad; 
+}; 
+  struct xxx  p[5];   
+main() 
+{ 
+  struct  xxx *q=0,*r,*m; 
+  int a[5][5]={ 
+      0,1,1,1,0, 
+      0,0,0,0,1, 
+      0,0,0,1,0, 
+      0,1,0,0,1, 
+      0,0,0,0,0 
+    }; 
+  int i,j,k; 
+  int result[5]; 
+  memset(p,0,sizeof(p)); 
+//create adjacence list 
+  for(i=0;i<5;i++) 
+  { 
+    p[i].node=i+1; 
+    for(j=0;j<5;j++) 
+    { 
+      if(a[i][j]==1) 
+        p[i].total++; 
+    }   
+    for(k=1;k<=p[i].total;k++) 
+    { 
+      printf("Enter adjacence node for %d\n",p[i].node); 
+      if(q==0) 
+      { 
+        q=malloc(sizeof(struct xxx)); 
+        printf("Enter adjacence node :"); 
+        scanf("%d",&q->node); 
+        q->ad=0; 
+        p[i].ad=q; 
+      } 
+      else 
+      { 
+        r=malloc(sizeof(struct xxx)); 
+        printf("Enter adjacence node :"); 
+        scanf("%d",&r->node); 
+        q->ad=r; 
+        q=r; 
+        r->ad=0; 
+      } 
+    }   
+    q=0; 
+    p[i].total=0; 
+  } 
+//traverse adjacence list 
+  for(i=0;i<5;i++) 
+  { 
+    printf("%d : ",p[i].node); 
+    if(p[i].ad!=0) 
+    { 
+      r=p[i].ad; 
+      while(r!=0) 
+      { 
+        printf("%d -> ",r->node); 
+        r=r->ad; 
+      } 
+      printf("\n"); 
+    } 
+  } 
+    q=malloc(sizeof(struct xxx)); 
+    printf("Enter source :"); 
+    scanf("%d",&q->node); 
+    set_status(q->node); 
+    p[q->node-1].status=1; 
+    q->ad=0; 
+ 
+  while(1) 
+  { 
+    r=p[q->node-1].ad; 
+    if(r==0) 
+      break; 
+    p[q->node-1].status=1; 
+    while(r!=0) 
+    { 
+      if(r->status==0) 
+      { 
+        m=malloc(sizeof(struct xxx)); 
+        m->node=r->node; 
+        set_status(r->node); 
+        m->ad=q; 
+        q=m; 
+      } 
+      r=r->ad; 
+    } 
+         
+  }     
+     
+  while(q!=0) 
+  { 
+    printf("%d ",q->node); 
+    q=q->ad; 
+  } 
+ 
+} 
+set_status(int n) 
+{ 
+  struct xxx *r; 
+  int i; 
+   
+  for(i=0;i<5;i++) 
+  { 
+    r=p[i].ad; 
+    while(r!=0) 
+    { 
+      if(r->node==n) 
+        r->status=1; 
+      r=r->ad; 
+    } 
+  } 
+   
+} 
+ 
+79. Program for BFS 
+struct xxx 
+{ 
+  int node; 
+  int total; 
+  int status; 
+  struct xxx *ad; 
+}; 
+  struct xxx  p[5];   
+main() 
+{ 
+  struct  xxx *q=0,*r,*m,*f; 
+  int a[5][5]={ 
+      0,1,1,1,0, 
+      0,0,0,0,1, 
+      0,0,0,1,0, 
+      0,1,0,0,1, 
+      0,0,0,0,0 
+    }; 
+  int i,j,k; 
+  int result[5]; 
+  memset(p,0,sizeof(p)); 
+//create adjacence list 
+  for(i=0;i<5;i++) 
+  { 
+    p[i].node=i+1; 
+    for(j=0;j<5;j++) 
+    { 
+      if(a[i][j]==1) 
+        p[i].total++; 
+    }   
+    for(k=1;k<=p[i].total;k++) 
+    { 
+      printf("Enter adjacence node for %d\n",p[i].node); 
+      if(q==0) 
+      { 
+        q=malloc(sizeof(struct xxx)); 
+        printf("Enter adjacence node :"); 
+        scanf("%d",&q->node); 
+        q->ad=0; 
+        p[i].ad=q; 
+      } 
+      else 
+      { 
+        r=malloc(sizeof(struct xxx)); 
+        printf("Enter adjacence node :"); 
+        scanf("%d",&r->node); 
+        q->ad=r; 
+        q=r; 
+        r->ad=0; 
+      } 
+    }   
+    q=0; 
+    p[i].total=0; 
+  } 
+//traverse adjacence list 
+  for(i=0;i<5;i++) 
+  { 
+    printf("%d : ",p[i].node); 
+    if(p[i].ad!=0) 
+    { 
+      r=p[i].ad; 
+      while(r!=0) 
+      { 
+        printf("%d -> ",r->node); 
+        r=r->ad; 
+      } 
+      printf("\n"); 
+    } 
+  } 
+    q=malloc(sizeof(struct xxx)); 
+    printf("Enter source :"); 
+    scanf("%d",&q->node); 
+    set_status(q->node); 
+    p[q->node-1].status=1; 
+    q->ad=0; 
+    f=q; 
+  while(1) 
+  { 
+    r=p[q->node-1].ad; 
+    if(r==0) 
+      break; 
+    p[q->node-1].status=1; 
+    while(r!=0) 
+    { 
+      if(r->status==0) 
+      { 
+        m=malloc(sizeof(struct xxx)); 
+        m->node=r->node; 
+        set_status(r->node); 
+        q->ad=m; 
+        q=m; 
+      } 
+      r=r->ad; 
+    } 
+         
+  }     
+     
+  while(f!=0) 
+  { 
+    printf("%d ",f->node); 
+    f=f->ad; 
+  } 
+ 
+} 
+set_status(int n) 
+{ 
+  struct xxx *r; 
+  int i; 
+   
+  for(i=0;i<5;i++) 
+  { 
+    r=p[i].ad; 
+    while(r!=0) 
+    { 
+      if(r->node==n) 
+        r->status=1; 
+      r=r->ad; 
+    } 
+  } 
+   
+} 
+ 
+ 
+80. Program to search an element using hash table 
+main() 
+{ 
+  int x[10]; 
+  int k,m=8,i=0,j=0,flag=0; 
+  int  pos; 
+  memset(x,0,sizeof(x)); 
+  for(i=0;i<8;i++) 
+  { 
+    printf("Enter data :"); 
+    scanf("%d",&k); 
+    pos=(k%m+j)%m; 
+    if(x[pos]==0) 
+      x[pos]=k; 
+    else 
+    { 
+      while(x[pos]!=0) 
+      { 
+        j++; 
+        pos=(k%m+j)%m; 
+      } 
+      x[pos]=k; 
+      j=0; 
+    } 
+ 
+  } 
+  j=0; 
+  printf("Enter number to search :"); 
+  scanf("%d",&k); 
+  pos=(k%m+j)%m; 
+  if(k==x[pos]) 
+    flag=1; 
+  else 
+  { 
+     
+    while(pos<m) 
+    { 
+      pos++; 
+      if(x[pos]==k) 
+      { 
+        flag=1; 
+        break; 
+      } 
+    } 
+  } 
+  if(flag==1) 
+    printf("Found\n"); 
+  else 
+    printf("Not found\n"); 
+} 
+ 
+81. Program to search a string from hast table 
+main() 
+{ 
+  char x[8][20]; 
+  int i,k,pos,m=8,j=0,f=0; 
+  char p[20]; 
+  memset(x,0,sizeof(x)); 
+  for(i=0;i<8;i++) 
+  { 
+    printf("Enter string :"); 
+    scanf("%s",p); 
+    k=p[0]; 
+    pos=(k%m+j)%m; 
+    if(strlen(x[pos])==0) 
+      strcpy(x[pos],p); 
+    else 
+    { 
+      while(j<m) 
+      { 
+        j++; 
+        pos=(k%m+j)%m; 
+        if(strlen(x[pos])==0) 
+          break; 
+      } 
+      strcpy(x[pos],p); 
+      j=0; 
+    } 
+   
+  } 
+  j=0; 
+  printf("Enter search string :"); 
+  scanf("%s",p); 
+  k=p[0]; 
+  pos=(k%m+j)%m; 
+  if(strcmp(x[pos],p)==0) 
+    f=1; 
+  else 
+  while(j<m) 
+  { 
+    j++; 
+    pos=(k%m+j)%m; 
+    if(strcmp(x[pos],p)==0) 
+    { 
+      f=1; 
+      break; 
+    } 
+  }   
+  if(f==1) 
+    printf("Found"); 
+  else 
+    printf("Not found"); 
+} 
+ 
+82. Program to search an element using hash table using chaning 
+ 
+struct xxx 
+{ 
+  int data; 
+  struct xxx *ad; 
+}; 
+main() 
+{ 
+  struct xxx p[10],*q,*r;   
+  int i,k,m=10,pos,flag=0; 
+  memset(p,0,sizeof(p)); 
+  for(i=0;i<10;i++) 
+  { 
+    printf("Enter element :"); 
+    scanf("%d",&k); 
+    pos=k%m; 
+    if(p[pos].data==0) 
+    { 
+      p[pos].data=k; 
+    } 
+    else 
+    { 
+      if(p[pos].ad==0) 
+      { 
+        q=malloc(sizeof(struct xxx)); 
+        p[pos].ad=q; 
+        q->data=k; 
+        q->ad=0; 
+      } 
+   
+      else 
+      { 
+        r=p[pos].ad; 
+        while(r->ad!=0) 
+        { 
+          r=r->ad; 
+        } 
+        q=malloc(sizeof(struct xxx)); 
+        q->data=k; 
+        q->ad=0; 
+        r->ad=q;   
+       } 
+    } 
+    } 
+    printf("Enter number to search:"); 
+    scanf("%d",&k); 
+    pos=k%m; 
+    if(k==p[pos].data) 
+      flag=1; 
+    else 
+    { 
+      r=p[pos].ad; 
+      while(r!=0) 
+      { 
+        if(k==r->data) 
+        { 
+          flag=1; 
+          break; 
+        } 
+        r=r->ad; 
+      } 
+    }     
+  if(flag==1) 
+    printf("Found\n"); 
+  else 
+    printf("Not found\n"); 
+ 
+} 
+83. Shortmest path using warshal's algorith 
+main() 
+{ 
+  int a[6][6]={ 
+      0,5,3,99,1,99, 
+      99,0,99,5,99,99, 
+      99,99,0,99,2,2, 
+      99,99,3,0,99,3, 
+      99,2,99,1,0,99, 
+      99,99,99,99,99,0 
+    }; 
+  int i,j,k; 
+  int p[6][6]; 
+  for(i=0;i<6;i++) 
+  { 
+    for(j=0;j<6;j++) 
+    { 
+      if(a[i][j]==0) 
+        p[i][j]=0; 
+      else 
+        p[i][j]=a[i][j]; 
+    } 
+  } 
+//find shortest path 
+  for(k=0;k<6;k++) 
+  { 
+    for(i=0;i<6;i++) 
+    { 
+      for(j=0;j<6;j++) 
+      { 
+        if(p[i][j]<=p[i][k] + p[k][j]) 
+          p[i][j]=p[i][j]; 
+        else 
+          p[i][j]=p[i][k]+p[k][j];     
+      } 
+    } 
+  } 
+//traverse shortest path   
+  for(i=0;i<6;i++) 
+  { 
+    for(j=0;j<6;j++) 
+    { 
+      printf("%d ",p[i][j]); 
+    } 
+    printf("\n"); 
+  } 
+ 
+} 
+84. Shortest path using dijkstra's algorith 
+ 
+ 
+main() 
+{ 
+  int x[8]; 
+  int y[8]; 
+  int i,j,label,s,c=1; 
+  int flag[8]; 
+   
+  int a[8][8]={ 
+      0,100,3,100,100,100,3,100, 
+      100,0,100,100,100,100,2,5, 
+      100,100,0,3,100,100,100,100, 
+      100,100,100,0,100,1,100,100, 
+      100,2,100,100,0,2,100,2, 
+      100,100,100,100,100,0,6,1, 
+      100,2,4,4,1,100,0,100, 
+      100,100,100,5,100,100,100,0 
+    }; 
+  memset(flag,0,sizeof(flag)); 
+  printf("Enter source:"); 
+  scanf("%d",&label); 
+  flag[label]=1; 
+   
+  for(i=0;i<8;i++) 
+  { 
+    x[i]=a[label][i]; 
+  } 
+ 
+   while(c<8) 
+   {   
+  label=smallest(x,flag); 
+  s=x[label]; 
+  for(i=0;i<8;i++) 
+  { 
+    y[i]=a[label][i]+s; 
+    if(x[i]>y[i]) 
+      x[i]=y[i]; 
+  } 
+  flag[label]=1; 
+  c++; 
+  }   
+  for(i=0;i<8;i++) 
+  { 
+    printf("%d ",x[i]); 
+  }     
+} 
+ 
+int smallest(int x[],int flag[]) 
+{ 
+  int i,j,k; 
+  for(i=0;i<8;i++) 
+  { 
+    if(flag[i]!=1) 
+    { 
+      k=x[i]; 
+      break; 
+    } 
+  }   
+  for(i=0;i<8;i++) 
+  { 
+    if(flag[i]!=1) 
+      if(x[i]<k) 
+      { 
+        k=x[i];     
+        j=i; 
+      } 
+  } 
+  return j; 
+} 
+ 
+85. Find the path matrix of Graph 
+ 
+main() 
+{ 
+  int a[6][6]={ 
+      0,1,1,0,1,0, 
+      0,0,0,1,0,0, 
+      0,0,0,0,1,1, 
+      0,0,1,0,0,1, 
+      0,1,0,1,0,0, 
+      0,0,0,0,0,0 
+      }; 
+  int i,j,k; 
+  int p[6][6]; 
+    for(i=0;i<6;i++) 
+    { 
+      for(j=0;j<6;j++) 
+      { 
+        if(a[i][j]==0) 
+          p[i][j]=0; 
+        else 
+          p[i][j]=1; 
+      } 
+    } 
+ 
+//calculate path matrix 
+   
+  for(k=0;k<6;k++) 
+  { 
+    for(i=0;i<6;i++) 
+    { 
+      for(j=0;j<6;j++) 
+      { 
+        p[i][j]=p[i][j]|(p[i][k] & p[k][j]); 
+      } 
+    } 
+  } 
+//visit path matrix   
+for(i=0;i<6;i++) 
+{ 
+  for(j=0;j<6;j++) 
+  { 
+    printf("%d ",p[i][j]); 
+  } 
+  printf("\n"); 
+} 
+   
+} 
+86. Program to read the current date and time 
+ 
+#include<time.h> 
+main() 
+{ 
+ struct tm *k; 
+ unsigned long int t; 
+ 
+ int h,m,s; 
+ int dd,mm,yy; 
+ 
+ t = time(0); 
+ k = localtime(&t); 
+ 
+ h = k->tm_hour; 
+ m = k->tm_min; 
+ s = k->tm_sec; 
+ 
+ dd = k->tm_mday; 
+ mm = k->tm_mon+1; 
+ yy = k->tm_year+1900; 
+ 
+ printf("Time : %d : %d : %d\n",h,m,s); 
+ printf("Date : %d : %d : %d\n",dd,mm,yy); 
+} 
+ 
+87. Program to read all files from current directory 
+ 
+#include "dirent.h" 
+main() 
+{ 
+ DIR *p; 
+ struct dirent *q; 
+  
+ p = opendir("/home/satyam/Desktop/demo"); 
+ while((q=readdir(p)) != 0) 
+ { 
+  if(q->d_name[0] != '.') 
+   printf("%s\n",q->d_name); 
+ } 
+} 

@@ -1,0 +1,228 @@
+ #include "head.h"
+
+ struct DOJ
+ {
+    int date;
+    int month;
+    int year;
+ };
+ typedef struct Employee
+  {
+    int eid;
+    char name[20];
+    struct DOJ d;
+    float Basic;
+    float Da;
+    float Hra;
+    float Cca;
+    float NetSal;
+
+  }EMP;
+ void  input_record(FILE *fp)
+  {
+    int i;
+     int j=1;
+    char ch;
+    EMP e;
+  while(ch!='n')
+  {
+      e.eid=j++;
+      fflush(stdin);
+      printf("\n Enter the name =");
+      scanf("%s",e.name);
+      fflush(stdin);
+      printf("\n Enter the doj ");
+      printf("\n enter the date of joining=");
+      scanf("%d",&e.d.date);
+      printf("\n Enter the month of month of joining =");
+      scanf("%d",&e.d.month);
+      printf("\n enter the year of joining =");
+      scanf("%d",&e.d.year);
+      printf("\n Enter the Basic salary== ");
+      scanf("%f",&e.Basic);
+      e.Da=((60*e.Basic)/100);
+      e.Hra=((30*e.Da)/100);
+      e.Cca=((5*e.Basic)/100);
+      e.NetSal=(e.Basic+e.Da+e.Hra+e.Cca);
+
+    fwrite(&e,sizeof(e),1,fp);
+     fflush(stdin);
+    printf("\nDO YOU WANT TO CONTINUE =(y/n)");
+    scanf("%c",&ch);
+   }
+ }
+  void display_record(FILE *fp)
+  {
+    EMP e;
+    printf("\n----- showing data-----------");
+
+    printf("\nEMPID |\tNAME|\tDOJ|\t|\tBASICSAL |\tDA  |HRA  |\tCCA  |  NETSAL|\n\n");
+    fread(&e,sizeof(e),1,fp);
+    while(!feof(fp))
+    {
+    printf("\nemp-%d |  ",e.eid);
+    printf("%s|  ",e.name);
+    printf("%d|%d|%d|  ",e.d.date,e.d.month,e.d.year);
+    printf("%f |",e.Basic);
+    printf("%f |",e.Da);
+    printf("%f |",e.Hra);
+    printf("%f |",e.Cca);
+    printf("%f |",e.NetSal);
+
+
+    fread(&e,sizeof(e),1,fp);
+    }
+  }
+
+  void update_record(FILE *fp)
+  {
+    EMP  e;
+    int id=0,ch=0;
+    printf("\n Enter the id where you want to update the data =");
+    scanf("%d",&id);
+    rewind(fp);
+
+    while(!feof(fp))
+    {
+     fscanf(fp,"%d%s%d%d%d%f",&e.eid,&e.name,&e.d.date,&e.d.month,&e.d.year,&e.Basic);
+
+
+  if(id==e.eid)
+     {
+
+      printf("  1.for updating name \n 2.updating doj \n 3.updating Basic salary ");
+
+      printf("\n If you want to update the name press 1 ");
+      scanf("%d",&ch);
+	if(ch==1)
+	 {
+	  printf("\n enter new name =");
+	  scanf("%s",e.name);
+	 }
+	printf("\n if you want to update the doj press 2 ");
+	scanf("%d",&ch);
+	if(ch==2)
+	 {
+	   printf("\n Enter the new doj =");
+	   printf("\n Enter the new date =");
+	   scanf("%d",&e.d.date);
+	   printf("\n Enter the new month =");
+	   scanf("%d",&e.d.month);
+	   printf("\n Enter the new year =");
+	   scanf("%d",&e.d.year);
+	 }
+	 printf("\n If you want to update the basic salary press 3 ");
+	 scanf("%d",&ch);
+	 if(ch==3)
+	 {
+	   printf("\n Enter the new basic salary =");
+	   scanf("%f",&e.Basic);
+	 }
+	   printf("\n your data is updating ... ");
+	//  fseek(&e,sizeof(e),SEEK_CUR);
+
+	 fwrite(&e,sizeof(e),1,fp);
+	  printf("\n data has updated now ");
+	  break;
+
+     }
+   printf("\n Record not found");
+   break;
+   }
+
+
+ }
+
+ void delete_record(FILE *fp,FILE *ft)
+ {
+   int n;
+   EMP e;
+   printf("\n enter the id which you want to delete =");
+   scanf("%d",&n);
+   rewind(fp);
+   while(!feof(fp))
+   {
+   fscanf(fp,"%d%s%d%d%d%f%f%f%f%f",&e.eid,e.name,&e.d.date,&e.d.month,&e.d.year,&e.Basic,&e.Da,&e.Hra,&e.Cca,&e.NetSal);
+   if(n!=e.eid) {
+   fprintf(ft,"%d %s %d %d %d %f %f %f %f %f",e.eid,e.name,e.d.date,e.d.month,e.d.year,e.Basic,e.Da,e.Hra,e.Cca,e.NetSal);
+    }
+
+   }
+
+
+ }
+   //main
+  void main()
+  {
+     FILE *fp ,*ft;
+     EMP e;
+     int choice;
+     char fname[20];
+     int id;
+     clrscr();
+     printf("\n Enter the file name =");
+     scanf("%s",fname);
+     for(;;)
+       {
+	      printf("\n1.input Record \n 2.Display Record \n 3. Update Record \n 4.Delete  Record \n 5.exit ");
+	      printf("\n** Enter your choice= ");
+	      scanf("%d",&choice);
+	    switch(choice)
+	   {
+       case 1:
+	       fp=fopen(fname,"w");
+	       if(fp==NULL)
+	       {
+		 printf("\n file not found ");
+		 exit(1);
+	       }
+	       input_record(fp);
+	       fclose(fp);
+	       break;
+
+      case 2:
+	      fp=fopen(fname,"r");
+	      if(fp==NULL)
+	     {
+		printf("\n file not found");
+		exit(1);
+	     }
+	     display_record(fp);
+	     fclose(fp);
+	     break;
+      case 3:
+	    fp=fopen(fname,"rb+");
+	      if(fp==NULL)
+	      {
+	       printf("\n file not found ");
+		exit(1);
+	      }
+	      update_record(fp);
+	      fclose(fp);
+	      break;
+      case 4:
+	     fp=fopen(fname,"r");
+	     ft=fopen("temp","wb+");
+
+	     if(fp==NULL)
+	     {
+	       printf("\n file not found ");
+	       exit(1);
+	     }
+	     delete_record(fp,ft);
+	     fclose(fp);
+	     fclose(ft);
+	     remove(fname);
+	     rename("temp",fname);
+	     break;
+
+	default :
+		       exit(0);
+
+	  }
+      }
+  getch();
+
+
+  }
+

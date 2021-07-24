@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<sys/ipc.h>
+#include<sys/types.h>
+struct msg
+{
+    int i;
+    char name;
+};
+struct mymsg
+{
+    long mtype;
+    struct msg m;
+};

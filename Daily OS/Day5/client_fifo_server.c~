@@ -1,0 +1,22 @@
+/**
+*	Hrere Client is Writing First & Then Server is reading that  value   & 
+*       after that server is echoing/writing the same value to client pipe 
+*       & client is just reading & printing that value 
+*		i.e Echoing Server....
+**/
+
+
+
+#include<stdio.h>
+#include<string.h>
+#include<fcntl.h>
+
+
+int main(void)
+{
+  int ret ;  
+   mkfifo("server",S_IWUSR|S_IRUSR);
+   
+    
+ return(0);
+}

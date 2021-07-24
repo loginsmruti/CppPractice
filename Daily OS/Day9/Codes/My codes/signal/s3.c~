@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<signal.h>
+
+void handl(int x)
+ {
+   printf("handler receive \n");
+    exit(0);
+ }
+
+
+int main()
+ {
+   int pid=fork();
+   int fd;
+   for(;;)
+   {
+   fd=fopen("time",O_CREAT |O_WRONLY |S_IUSER | S_
+  if(pid)
+  {
+   printf(" parent  ....\n");
+   sleep(5);
+   kill(pid,SIGUSR1);
+  }
+  else
+   {
+   signal(SIGUSR1,handl);
+   printf("handler installed \n");
+  
+
+  }
+
+
+ return 0;
+}

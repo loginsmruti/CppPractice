@@ -1,0 +1,69 @@
+chapter 12.1 pointer & references to the base & derived object
+--------------------------------------------------------------
+why virtual function is needed ?
+	
+why dervide object has a base & child part both?
+	Since a Derived is-a Base, it is appropriate that Derived contain a Base part.
+
+
+chapter 12.2 Virtual functions and polymorphism
+-----------------------------
+what is a virtual function , how to implement ?
+what is polymorphism ?
+Virtual function donot's
+Virtual function return type
+Demerits of virtual functions
+Virtual function code examples
+
+
+chapter 12.2a The override and final specifiers, and covariant return types
+-----------------------------
+wwhat is a Override specifier & how to use it ?
+What is a final overriden method & what about final classes ?
+Covariant return types ?
+
+chapter 12.3 Virtual destructors, virtual assignment, and overriding virtualization
+-----------------------------------------------------------------------------------
+virtual destructor & why it is required ?
+Virtual assignments -- making assignment operatoe virtual
+How to ignore virtualization ?
+
+chapter 12.4 Early binding and late binding
+-------------------------------------------
+what binding refers to ?
+Early binding Vs Late binding
+
+chapter 12.5 Virtual Table
+---------------------------
+What is a virtual Table ?
+How to implement Virtual Table/VTable
+
+12.6 — Pure virtual functions, abstract base classes, and interface classes
+---------------------------
+pure virtual function implementation . alternate implementation using Protected constructor
+What is a Interface class & what are the applications to it ?
+
+
+
+12.7 — Virtual base classes
+-------------------------
+Virtual base class & consequences
+
+12.7 — Object slicing
+-------------------------
+What is Object slicing & what is the solutions to it?
+How Slicing occures . example ? pass-by-value/return by value /pushing into vector container(avoid objecting slicing using std::reference_wrapper)
+What is a franken object ?
+
+chapter 12.9 Dynamic casting
+------------------------------
+why we need a dynamic casting ?	
+how to do dynamic cast or what is down casting ?
+cases where dynamic cast fails ?
+can down cast be possible with static cast & what will be the consequences?
+Is down_cast possible with reference & what can be the consequences to it ?
+down_cast vs static_cast ?
+down_cast vs virtual funcions ?
+When you think dynamic cast is the better choice ?
+
+

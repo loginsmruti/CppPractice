@@ -1,0 +1,16 @@
+#0  _init (argc=1, argv=0xbffff184, envp=0xbffff18c) at init-first.c:52
+#1  0xb7fecd37 in call_init (l=0xb7ebb000, argc=argc@entry=1, argv=argv@entry=0xbffff184, env=env@entry=0xbffff18c) at
+dl-init.c:64
+#2  0xb7fece64 in call_init (env=0xbffff18c, argv=0xbffff184, argc=1, l=<optimized out>) at dl-init.c:36
+#3  _dl_init (main_map=0xb7fff938, argc=1, argv=0xbffff184, env=0xbffff18c) at dl-init.c:126
+#4  0xb7fdf10f in _dl_start_user () from /lib/ld-linux.so.2
+(gdb) p argv
+$1 = (char **) 0xbffff184
+(gdb) p envp
+$2 = (char **) 0xbffff18c
+(gdb) p *argv
+$3 = 0xbffff347 "/home/vickydgm/c++/exp_c++/list/a.out"
+(gdb) p *envp
+$4 = 0xbffff36d "XDG_VTNR=7"
+(gdb) 
+

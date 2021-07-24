@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<signal.h>
+#include<time.h>
+#include<string.h>
+
+  void ext(int x)
+   {
+     exit(0);
+
+   }
+  void send(int x)
+   {
+
+     printf("signal is sending to the server ");
+
+  }
+int main()
+ {
+    int fd1[2],i;
+    pipe(fd1);
+     
+   int cpid=fork();
+    if(cpid)
+    {
+         signal(SIGCHLD,ext);
+       close(fd1[0]);   // close read
+       char sertime[80];
+       time_t t;
+            while(1)
+         {      
+           sleep(1);
+       t=time(NULL);
+       strcpy(sertime,ctime(&t));
+       write(fd1[1],sertime,strlen(sertime));
+         kill(cpid,SIGUSR1);
+       }
+    }
+    else
+    {
+       signal(SIGUSR1,send);
+      
+       close(fd1[1]);   // close write...
+       char clienttime[80];
+        for( i=0;i<10;i++)
+         {
+       int n=read(fd1[0],clienttime,80);
+       clienttime[n]='\0';
+       printf("client ---%s\n",clienttime);
+        }
+    }
+}

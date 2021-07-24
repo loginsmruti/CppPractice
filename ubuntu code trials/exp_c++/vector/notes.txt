@@ -1,0 +1,34 @@
+std::vector::insert
+----------------------
+single element (1)  
+iterator insert (const_iterator position, const value_type& val);
+
+fill (2)    
+iterator insert (const_iterator position, size_type n, const value_type& val);
+
+range (3)   
+template <class InputIterator>
+iterator insert (const_iterator position, InputIterator first, InputIterator last);
+
+move (4)    
+iterator insert (const_iterator position, value_type&& val);
+
+initializer list (5)    
+iterator insert (const_iterator position, initializer_list<value_type> il);
+
+std::vector::assign
+-------------------
+range (1)   
+template <class InputIterator>
+void assign (InputIterator first, InputIterator last);
+
+fill (2)  
+void assign (size_type n, const value_type& val);
+
+initializer list (3)  
+void assign (initializer_list<value_type> il);
+
+std::vector::at
+-----------------
+reference at (size_type n);
+const_reference at (size_type n) const;

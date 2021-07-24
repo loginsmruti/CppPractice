@@ -1,0 +1,50 @@
+#include"header.h"
+void writeFile(int x)
+{
+    char fileName[80] ;
+    struct student st;
+    time_t tm = time(NULL);
+    int shid = shmget(SHMKEY,100*sizeof(struct student)+sizeof(int),IPC_CREAT|0660);
+    void *p = shmat(shid,0,0);
+    printf("in handler\n") ;    
+    int *no_of_rec=p,i;    
+    struct student *stptr = (struct student *)(no_of_rec+1);\
+    strcpy(fileName, "log/") ;
+    int fd = open(strcat(fileName,ctime(&tm)),O_RDWR|O_CREAT,S_IRUSR|S_IWUSR);   
+    //perror("open") ;
+     //printf("post open\n") ;
+    if(fd==-1)
+    {
+       printf("Unable to open\n");
+    }
+    else
+    { printf("no:::%d\n", *no_of_rec) ;
+       for(i=0;i<*no_of_rec;i++)
+       {
+          write(fd,stptr+i,sizeof(st));
+       }
+       printf("Written\n");
+    }
+    
+    close(fd);
+    alarm(30); 
+    //printf("exiting handler\n") ;
+}
+int main()
+{
+    struct student st;
+    struct reqmsg rm;
+    signal(SIGALRM,writeFile);
+    printf("Logger start\n");
+    int mid = msgget(MSGKEY,IPC_CREAT|0660); 
+    int ret=-1;
+    alarm(5);
+    
+    while(ret==-1)
+    {
+       ret=msgrcv(mid,&rm,sizeof(struct student),7,0);
+    }
+    printf("Logger exiting\n");
+    exit(0);  
+}
+

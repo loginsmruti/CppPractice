@@ -1,0 +1,25 @@
+#include "header.h"
+
+
+int main(void)
+{
+  MSG m , m1 ;
+
+  int mid , res ;
+  
+  mid =msgget(KEY ,IPC_CREAT | 0600);
+
+  msgrcv(mid , &m ,sizeof(STU),1 , 0);
+
+    //msgctl(mid , IPC_RMID ,NULL );
+
+	strcpy(m1.s.name ,m.s.name);
+	strcpy(m1.s.id ,m.s.id);
+            
+        msgsnd(mid ,&m1 , sizeof(STU) ,0);
+
+  printf("Name :%s   ID : %s \n",m.s.name,m.s.id);
+
+  return (0);
+
+}

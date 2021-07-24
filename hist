@@ -1,0 +1,500 @@
+   37  cd ls
+   38  ls
+   39  ls
+   40  cd tryhere/
+   41  ls
+   42  ls
+   43  ls -l
+   44  ls -G
+   45  ls -G
+   46  $$
+   47  echo $$
+   48  bash
+   49  csh
+   50  vim ~/.bashrc
+   51  export CLICOLOR=1
+   52  ls
+   53  export CLICOLOR=
+   54  ls
+   55  export CLICOLOR=0
+   56  ls
+   57  cat typescript
+   58  ls
+   59  vim ~/.bash_
+   60  vim ~/.bash_history 
+   61  vim ~/.bash_sessions/
+   62  vim ~/.bashrc
+   63  ls
+   64  ls
+   65  cd Documents/c++/tryhere/
+   66  ls
+   67  vim ~/.babshrc
+   68  vim ~/.bashrc
+   69  exit
+   70  ls
+   71  vim ~/.bashrc
+   72  ls
+   73  ls -G
+   74  bash
+   75  vim ~/.cshrc
+   76  pwd
+   77  exit
+   78  ls
+   79  echo $SHELL
+   80  vim ~/.bashrc
+   81  ls
+   82  source ~/.bashrc
+   83  ls
+   84  exit
+   85  ls
+   86  source ~/.bashrc
+   87  ls
+   88  vim ~bash
+   89  -bash
+   90  -bash
+   91  date
+   92  vim ~/.hoshlogin
+   93  vim ~/.hushlogin
+   94  vim /Users/vicky/.vimrc
+   95  pwd
+   96  vim .viminfo
+   97  pwd
+   98  ls
+   99  vim /Users/vicky/.vimrc
+  100  vim ~/.bashrc
+  101  vim ~/.
+  102  vim /Users/vicky/.vimrcc
+  103  vim /Users/vicky/.bashrc 
+  104  source ~/.bashrc
+  105  ls
+  106  cd vim .lldb
+  107  cd vim /.lldb
+  108  cd vim ./.lldb
+  109  ls
+  110  vim lldb
+  111  vim .lldb/
+  112  cd Documents/c++/tryhere/
+  113  ls
+  114  ls 
+  115  vim ~/.bashrc
+  116  source ~/.bashrc
+  117  ll
+  118  ls
+  119  ls
+  120  ls
+  121  vim ~/.bashrc
+  122  source ~/.bashrc
+  123  ls
+  124  ls
+  125  vim ~/.bashrc 
+  126  source ~/.bashrc
+  127  ls
+  128  ll
+  129  ls
+  130  ll
+  131  cd Documents/c++/tryhere/
+  132  ls
+  133  vim fsm/
+  134  vim fsm/
+  135  ls
+  136  ls
+  137  vim fsm/
+  138  ls
+  139  cd fsm/
+  140  ls
+  141  ll
+  142  vim machine.cc
+  143  vim machine.hh machine.cc machineStates.hh -O
+  144  exit
+  145  exit
+  146  exit
+  147  screen -S rocky
+  148  exit
+  149  q
+  150  exi
+  151  exit
+  152  exit
+  153  /Users/vicky/Library/Mobile\ Documents/com\~apple\~CloudDocs/Xcode\ Projects/Generic\ Makefile/Makefile ; exit;
+  154  exit
+  155  source ~/.bashrc
+  156  pwd
+  157  cd Documents/c++/tryhere/
+  158  ls
+  159  ls
+  160  source ~/.bashrc 
+  161  ls
+  162  ll
+  163  ll
+  164  cd fsm/
+  165  ls
+  166  vim ~/.bashrc 
+  167  vim ~/.bashrc 
+  168  pstree
+  169  tree
+  170  brew install tree
+  171  tree
+  172  pwd
+  173  cd /
+  174  tree
+  175  pwd
+  176  pwd
+  177  pwd
+  178  ls
+  179  cd home/
+  180  ls
+  181  ls
+  182  cd ../Users/vicky/Documents/c++/
+  183  l
+  184  ll
+  185  tree
+  186  ls
+  187  ll
+  188  vim ~/.vimrc
+  189  cd ~
+  190  ls -alrth
+  191  ll
+  192  vim $VIM
+  193  cp /Users/vicky/Downloads/taglist_46.zip ./
+  194  ls
+  195  unip taglist_46.zip
+  196  unzip taglist_46.zip
+  197  cd taglist_46.zip 
+  198  vim ./.vim
+  199  vim ./.vim
+  200  vim plugin/taglist.vim 
+  201  vim plugin/taglist.vim 
+  202  cd plugin/
+  203  ls
+  204  vim taglist.vim 
+  205  ls
+  206  cd .
+  207  cd .
+  208  cd ..
+  209  ls
+  210  ll
+  211  cd .vim
+  212  ls
+  213  ls
+  214  cp ../taglist_46.zip ./
+  215  ls
+  216  unzip taglist_46.zip 
+  217  ls
+  218  pwd
+  219  ls
+  220  cd ~
+  221  ls
+  222  cd doc/
+  223  ls
+  224  cd ..
+  225  cd plugin/
+  226  ls
+  227  cd ...
+  228  ls
+  229  pwd
+  230  cd .
+  231  cd ..
+  232  ls
+  233  rm -rf doc/ plugin/
+  234  cd ./.vim
+  235  ls
+  236  vim 
+  237  pwd
+  238  vim
+  239  pwd
+  240  ls
+  241  cd doc/
+  242  ls
+  243  vim taglist.txt 
+  244  source ~/.bashrc
+  245  source ~/.bashrc
+  246  vim .vim/
+  247  cd ~/.vim
+  248  ls
+  249  ls
+  250  ls -alrth
+  251  vim 
+  252  ctags
+  253  pwd
+  254  cd ..
+  255  ls
+  256  vim ~/.vimrc
+  257  vim
+  258  vim ~/.vimrc
+  259  extags
+  260  pwd
+  261  vim plugin/taglist.vim
+  262  which ctag
+  263  which ctags
+  264  ls
+  265  pwd
+  266  ls -al
+  267  vim .lldb
+  268  vim .vimrc
+  269  echo $HOME
+  270  ps -pef |grep vim
+  271  ps -ef |grep vim
+  272  man ctags
+  273  !
+  274  vim
+  275  ctags --help
+  276  ctags
+  277  ctags --versio
+  278  ctags --version
+  279  ctags --version
+  280  man ctags
+  281  pwd
+  282  vim 
+  283  cd Documents/c++/tryhere/
+  284  ls
+  285  vim implement_queue_using_linkedlist.cc
+  286  vim ./
+  287  screen
+  288  pwd
+  289  cd ..
+  290  ls
+  291  ctags -R &
+  292  ls
+  293  ls -alrth tags
+  294  ll
+  295  ctags -R
+  296  ls
+  297  man ctags
+  298  ctags -f
+  299  man ctags
+  300  ls
+  301  ls
+  302  vim implement_queue_using_linkedlist.cc
+  303  ls
+  304  vim dynamic_casting.cc
+  305  vim dynamic_casting.cc
+  306  vim dynamic_casting.cc
+  307  ls
+  308  man cscope
+  309  cscope -R
+  310  ctags
+  311  ctags -f *
+  312  ls
+  313  ll
+  314  brew install ctags
+  315  ll
+  316  ctags -R
+  317  ll
+  318  vim ~/.vimrc
+  319  vim ~/.bashrc 
+  320  ctags
+  321  ls
+  322  ll
+  323  which ctags
+  324  ll /usr/local/bin/ctags
+  325  vim ~/.bashrc 
+  326  ctags
+  327  ctags -R
+  328  ctags -R --exclude=.git --exclude=log *
+  329  vim ~/.vimrc
+  330  vim ~/.vimrc
+  331  pwd
+  332  ctags -R
+  333  ctags -f tag
+  334  vim ~/.vimrc
+  335  ls /usr/bin/ctags 
+  336  ls /usr/local/Cellar/ctags/5.8_1
+  337  /usr/local/Cellar/ctags/5.8_1/bin/ctags -R
+  338  ll
+  339  vim dynamic_casting.cc
+  340  vim partialTemplateSpecialization.cc
+  341  vim ~/.vimrc
+  342  vim partialTemplateSpecialization.cc
+  343  cd ~
+  344  ls
+  345  cd .vim
+  346  ls
+  347  vim doc/
+  348  ls
+  349  vim doc/taglist.txt 
+  350  source ~/.bashrc
+  351  vim ~/.vimrc
+  352  vim ~/.bashrc 
+  353  vim ~/.vimrc
+  354  lsl
+  355  l
+  356  ll
+  357  cd .vim
+  358  ls
+  359  rm -rf doc plugin
+  360  vim ~/.vimrc
+  361  cp ~/.vimrc ~/.vimrc_backup
+  362  cp ~/.bashrc ~/.bashrc_backup
+  363  pwd
+  364  ls
+  365  ls
+  366  ll
+  367  source ~/.bashrc
+  368  ll
+  369  source ~/.bashrc
+  370  ll
+  371  vim ~/.bashrc
+  372  vim ~/.vimrc
+  373  vim ~/.vimrc_backup 
+  374  vim ~/.vimrc
+  375  vim ~/.vimrc_backup 
+  376  source ~/.bashrc
+  377  source ~/.bashrc
+  378  lll
+  379  ll
+  380  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+  381  brew install tree
+  382  tree
+  383  which brew
+  384  which brew
+  385  vim Library/Caches/
+  386  ls
+  387  pwd
+  388  cd Library/
+  389  l
+  390  ls
+  391  brew analytics off
+  392  man cscope
+  393  cscope
+  394  ls
+  395  pwd
+  396  man scree
+  397  man screen
+  398  quit
+  399  exit
+  400  exit
+  401  exit
+  402  exit
+  403  exit
+  404   exit
+  405  source ~/.bashrc
+  406  ll
+  407  pwd
+  408  ls
+  409  cd Documents/c++/
+  410  ls
+  411  rm tags 
+  412  ctags -R &
+  413  ls
+  414  ls -alrth
+  415  vim operatorOverloadSubstraction.cc
+  416  pwd
+  417  cscope 
+  418  cscope  -d
+  419  man cscope
+  420  brew insatll cscope
+  421  brew install cscope
+  422  man cscope
+  423  ls
+  424  man cscope
+  425  cscope -R -b
+  426  ls
+  427  ls -alrth
+  428  cs
+  429  cscode
+  430  cscope 
+  431  ls
+  432  vim vim partialTemplateSpecialization.cc
+  433  vim partialTemplateSpecialization.cc
+  434  screen
+  435  screen -S vicky
+  436  screen -S vicky
+  437  screen
+  438  screen -S vicky
+  439  screen
+  440  screen x
+  441  screen
+  442  git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+  443  vim
+  444  vim ~/.vimrc
+  445  vim ~/.vimrc_backup 
+  446  vim ~/.vimrc
+  447  vim ~/.vimrc ~/.vimrc_backup -O
+  448  vim ~/.vimrc
+  449  vim ~/.vimrc
+  450  vim ~/.vimrc
+  451  vim ~/.vimrc
+  452  vim ~/.vimrc
+  453  vim ~/.vimrc
+  454  vim ~/.vimrc
+  455  cd ~/.vim
+  456  ls
+  457  cd bundle/
+  458  ls
+  459  vim vim-airline/
+  460  vim vim-airline/
+  461  vim vim-airline/
+  462  cd ~/.vim
+  463  ls
+  464  unzip taglist_46.zip
+  465  ls
+  466  cd plugin/
+  467  ls
+  468  vim taglist.vim 
+  469  vim ~/.vimrc
+  470  vim ~/.vimrc_backup 
+  471  vim ~/.vimrc
+  472  cp ~/.vimrc_backup ~/.vimrc
+  473  vim ~/.vimrc
+  474  vim ~/.vimrc
+  475  vim ~/.vimrc
+  476  l
+  477  ls
+  478  cd ../../
+  479  ls
+  480  cd Documents/c++/
+  481  cd tryhere/
+  482  ls
+  483  vim virtInheritanceParamConstructor.cc
+  484  vim virtInheritanceParamConstructor.cc
+  485  vim ~/.vimrc
+  486  cp ~/.vimrc_backup ~/.vimrc
+  487  vim ~/.vimrc
+  488  vim ~/.vimrc
+  489  pwd
+  490  ls
+  491  vim virtInheritanceParamConstructor.cc
+  492  vim ~/.vim/plugin/taglist.vim 
+  493  vim virtInheritanceParamConstructor.cc
+  494  cd ~/.vim
+  495  ls
+  496  vim ~/.vimrc
+  497  vim ~/.bashrc
+  498  vim ~/.bashrc_backup 
+  499  cp ~/.bashrc_backup ~/.bashrc
+  500  source ~/.bashrc
+  501  pwd
+  502  cd Documents/c++/tryhere/
+  503  ls
+  504  ll
+  505  vim virtInheritanceParamConstructor.cc
+  506  screen
+  507  vim virtInheritanceParamConstructor.cc
+  508  vim ~/.vimrc
+  509  vim ~/.vimrc
+  510  vim ~/.vimrc:q!
+  511  git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+  512  cd ~/.vim
+  513  ls
+  514  rm -rf bundle/
+  515  git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+  516  vim
+  517  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  518  vim ~/.vimrc
+  519  vim ~/.vimrc
+  520  vim ~/.vimrc
+  521  vim ~/.vimrc_backup 
+  522  vim ~/.vimrc
+  523  vim ~/.vimrc
+  524  vim ~/.vimrc
+  525  vim ~/.vimrc
+  526  pwd
+  527  ls
+  528  cd ~
+  529  cd Documents/
+  530  cd c++/
+  531  ls
+  532  vim partialTemplateSpecialization.cc
+  533  sreen
+  534  screen
+  535  history 
+  536  history > hist

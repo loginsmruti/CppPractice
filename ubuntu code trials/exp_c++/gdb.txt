@@ -1,0 +1,31 @@
++help pvector 
+	Prints std::vector<T> information.
+	Syntax: pvector <vector> <idx1> <idx2>
+	Note: idx, idx1 and idx2 must be in acceptable range [0..<vector>.size()-1].
+	Examples:
+	pvector v - Prints vector content, size, capacity and T typedef
+	pvector v 0 - Prints element[idx] from vector
+	pvector v 1 2 - Prints elements in range [idx1..idx2] from vector
++pvector shapeVector
+++if $argc == 0
++++set $size = shapeVector._M_impl._M_finish - shapeVector._M_impl._M_start
++++set $capacity = shapeVector._M_impl._M_end_of_storage - shapeVector._M_impl._M_start
++++set $size_max = $size - 1
+++if $argc == 1
++++set $i = 0
++++while $i < $size
+++if $argc == 2
+++if $argc == 3
+++if $argc > 0
++++printf "Vector size = %u\n", $size
+Vector size = 0
++++printf "Vector capacity = %u\n", $capacity
+Vector capacity = 5
++++printf "Element "
+Element +++whatis shapeVector._M_impl._M_start
+type = std::_Vector_base<Shape*, std::allocator<Shape*> >::pointer
+Triangle::Triangle (this=0x804d020, str=0x8049a26 "right", w=8, h=12) at shape.cc:65
+#0  Triangle::Triangle (this=0x804d020, str=0x8049a26 "right", w=8, h=12) at shape.cc:65
+0x080489c9 in main () at shape.cc:106
+#0  main () at shape.cc:119
+[Inferior 1 (process 5076) exited normally]
