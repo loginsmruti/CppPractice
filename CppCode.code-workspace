@@ -7,26 +7,10 @@
 	"settings": {
 		"files.associations": {
 			"vector": "cpp",
-			"list": "cpp"
+			"list": "cpp",
+			"iostream": "cpp"
 		},
 		"terminal.integrated.automationShell.linux": "/usr/local/bin/zsh -c",
-	},
-	"launch": {
-		"version": "0.2.0",
-		"configurations": [
-			{
-				"name": "clang++ build active file",
-				"type": "cppdbg",
-				"request": "launch",
-				"program": "${fileDirname}/${fileBasenameNoExtension}",
-				"args": [],
-				"stopAtEntry": true,
-				"cwd": "${fileDirname}",
-				"environment": [],
-				"externalConsole": false,
-				"MIMode": "lldb",
-				"preLaunchTask": "clang++ build active file"
-			}
-		]
+		"editor.fontFamily": "MesloLGS NF",
 	}
 }
