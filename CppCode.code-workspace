@@ -10,7 +10,6 @@
 			"list": "cpp",
 			"iostream": "cpp"
 		},
-		"terminal.integrated.automationShell.linux": "/usr/local/bin/zsh -c",
-		"editor.fontFamily": "MesloLGS NF",
+		"editor.fontFamily": "MesloLGS NF"
 	}
 }
