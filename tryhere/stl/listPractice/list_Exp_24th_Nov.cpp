@@ -245,16 +245,48 @@ void getElementByIndexInList() {
     std::cout << "Advance by 3 element:::" << *pointer << std::endl;
 }
 
-void searchElementInList() {
+//generic search
+template <typename T>
+bool genericContains(const std::list<T>& container, const T& elem)
+{
+    auto it = std::find(container.begin(), container.end(), elem);
 
+    return it != container.end();
+    /* if(it != container.end()) {
+        //std::cout << "Element Found." << *it << std::endl;
+        return true;
+    } else {
+        //std::cout << "Element NOT Found." << std::endl;
+        return false;
+    } */
+}
+
+
+void searchElementInList() 
+{
+    std::list<int> listOfInts( { 2, 3, 3, 4, 8, 9, 4, 6, 8, 3 });
+
+    genericContains(listOfInts, 6) ? std::cout << "\nElement Found.\n" : std::cout << "\nElement NOT Found.\n";
 
 }   
 
-//generic search
+
 
 //sort list by custom comparator and lambda
+void sortElementByComparator() {
+    std::list<int> listOfInts( { 2, 3, 3, 4, 8, 9, 4, 6, 8, 3 });
 
-void list_size_resize_maxSize_API_usage() {
+    print<int>("Before Sorting:: ", listOfInts);
+    listOfInts.sort([] ( int& lhs, int& rhs) {
+        return lhs > rhs ?  true  :  false;
+        
+    });
+    print<int>("After Element is sorted in Ascending Order:: ", listOfInts);
+}
+
+
+void list_size_resize_maxSize_API_usage() 
+{
     std::list<int> listOfInts( { 2, 3, 3, 4, 8, 9, 4, 6, 8, 3 });
 
     print<int>("\nPrint elements ::: ", listOfInts);
@@ -262,7 +294,6 @@ void list_size_resize_maxSize_API_usage() {
     listOfInts.resize(5);
     print<int>("\nPrint elements after resize::: ", listOfInts);
     std::cout << "\nresize: " << listOfInts.size();
-
     
     print<int>("\nPrint elements after reserve(10)::: ", listOfInts);
 }
@@ -292,6 +323,12 @@ int main()
 
     std::cout << "+++++++++++++++++++++++++++++" << std::endl;
     getElementByIndexInList();
+
+    std::cout << "+++++++++++++++++++++++++++++" << std::endl;
+    searchElementInList();
+
+    std::cout << "+++++++++++++++++++++++++++++" << std::endl;
+    sortElementByComparator();
 
     return 0;
 }
