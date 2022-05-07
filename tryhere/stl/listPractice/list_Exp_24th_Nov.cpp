@@ -3,6 +3,7 @@
 #include <iterator>
 #include <algorithm>
 #include <experimental/iterator>
+#include <functional>
 
 template <typename T>
 auto print = [] (const std::string& str, const std::list<T>& container) {
@@ -15,6 +16,16 @@ auto print = [] (const std::string& str, const std::list<T>& container) {
 
 auto randomNumber = [] () -> int  {
     return std::rand() % 100;
+};
+
+struct MaxRandomNumber {
+    size_t maxNum;
+    MaxRandomNumber(size_t num) {
+        maxNum = num;
+    }
+    int operator()() {
+        return std::rand() % maxNum;
+    }
 };
 
 void listConstructors() {
@@ -70,11 +81,16 @@ void randomNumberGenerator() {
 
     std::generate(move.begin(), move.end(), randomNumber);
 
-    print<int>("randomNumberGenerator::: ", move);
+    print<int>("randomNumberGenerator idea -> 1 ::: ", move);
+
+    std::list<int> numGenerator({0,0,0,0,0,0,0});
+    std::generate(numGenerator.begin(), numGenerator.end(), MaxRandomNumber(200));
+    print<int>("randomNumberGenerator idea -> 2 ::: ", numGenerator);
 }
 
 
 struct Student {
+
     int id;
     std::string name;
     
@@ -136,7 +152,12 @@ struct Student {
         return *this;
     }
 
+    bool operator<(const Student& rhs) const
+        { return id < rhs.id; }
 
+    void print() {
+        std::cout << " ID:: " << id << " Name:: " << name << std::endl;
+    }
 };
 
 void listAPI() {
@@ -271,7 +292,6 @@ void searchElementInList()
 }   
 
 
-
 //sort list by custom comparator and lambda
 void sortElementByComparator() {
     std::list<int> listOfInts( { 2, 3, 3, 4, 8, 9, 4, 6, 8, 3 });
@@ -282,6 +302,17 @@ void sortElementByComparator() {
         
     });
     print<int>("After Element is sorted in Ascending Order:: ", listOfInts);
+
+    std::list<Student> studentObj;
+
+    studentObj.push_back(Student(121, "Vicky"));
+    studentObj.push_back( Student(4324, "Don") );
+    studentObj.push_back( Student(3465, "SomeOne") );
+    studentObj.push_back( Student(456, "Chicky") );
+    studentObj.push_back( Student(7657, "Mama"));
+
+    studentObj.sort();
+    for_each(studentObj.begin(), studentObj.end() , std::mem_fn(&Student::print));
 }
 
 

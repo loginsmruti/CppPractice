@@ -1,10 +1,11 @@
 #include <vector>
+#include<set>
 #include <iterator>
 #include <iostream>
 #include<experimental/iterator>
 
 template <typename T>
-auto print = [](const std::string& str, std::vector<T> container) {
+auto print = [](const std::string& str, std::vector<T>& container) {
     std::cout << str ;
     for(const auto& elem: container) {
         std::cout << elem << " ";
@@ -13,7 +14,7 @@ auto print = [](const std::string& str, std::vector<T> container) {
 };
 
 template <typename T>
-auto print2DMattrix = [] (const std::string& str, std::vector<std::vector<T>> matrix) {
+auto print2DMattrix = [] (const std::string& str, std::vector<std::vector<T>>& matrix) {
     std::cout << str ;
     for_each(matrix.begin(), matrix.end(), [] (const auto& row) {
         for_each(row.begin(), row.end(), [](const auto& col) {
@@ -25,6 +26,17 @@ auto print2DMattrix = [] (const std::string& str, std::vector<std::vector<T>> ma
 
 auto randomNum = []()->int {
     return std::rand() % 100;
+};
+
+struct MaxRandNum
+{
+    int maxNum;
+    MaxRandNum(int num) {
+        maxNum = num;
+    }
+    int operator()(){
+        return std::rand() % maxNum;
+    }
 };
 
 void vectorConstructor() {
@@ -50,14 +62,16 @@ void iterate_ways() {
 
     std::vector<int> initializer_list({9,8,7,6,5,4,3,2,1,0});
 
-    //iterate styles
+    //iterate styles - 1
     print<int>("Vector contains ::: ", move);
 
+    //iterate styles - 2
     for(const auto& elem: move) {
         std::cout << elem << " ";
     }
     std::cout << std::endl;
 
+    //iterate styles - 3
     std::vector<int>::iterator itr =  initializer_list.begin();
     while(itr != initializer_list.end()) {
         std::cout << *itr << "  ";
@@ -65,10 +79,12 @@ void iterate_ways() {
     }
     std::cout <<std::endl;
 
+    //iterate styles - 4
     std::copy(initializer_list.begin(), initializer_list.end(), std::ostream_iterator<int>(std::cout, " "));
 
+    //iterate styles - 5
     std::cout << "\nReverse printing" << std::endl;
-    std::vector<int>::reverse_iterator revItr= move.rbegin();
+    std::vector<int>::reverse_iterator revItr = move.rbegin();
     while (revItr != move.rend())
     {
         std::cout << *revItr << " ";
@@ -76,6 +92,7 @@ void iterate_ways() {
     }
     std::cout << std::endl;
 
+    //iterate styles - 6
     std::cout << "\nPrinting via container size" << std::endl;
     for (size_t i = 0; i < range.size(); i++)
     {
@@ -83,10 +100,12 @@ void iterate_ways() {
     }
     std::cout << std::endl;
 
+    //iterate styles - 7 c++17
     std::cout << "\nPrinting via experimental iterator" << std::endl;
     std::copy(move.begin(), move.end(), std::experimental::make_ostream_joiner(std::cout, " "));
     std::cout << std::endl;
 
+    //iterate styles - 8
     std::cout << "\nPrinting via for_each" << std::endl;
     for_each(move.begin(), move.end(), [](const auto& elem) {
         std::cout << elem <<" ";
@@ -95,14 +114,15 @@ void iterate_ways() {
 
 }
 
-
 void randomNumberGenerator() {
     std::vector<int> randNumVector(10);
     std::generate(randNumVector.begin(), randNumVector.end(), randomNum);
 
-    print<int>("randomNumberGenerator::: ", randNumVector);
+    print<int>("randomNumberGenerator  idea -> 1 ::: ", randNumVector);
+    std::vector<int> randNumVector_idea_2(10);
+    std::generate(randNumVector_idea_2.begin(), randNumVector_idea_2.end(), MaxRandNum(200));
+    print<int>("randomNumberGenerator idea -> 2 ::: ", randNumVector_idea_2);
 }
-
 
 void removeDuplicateCharacterFromVector() {
 
@@ -113,6 +133,14 @@ void removeDuplicateCharacterFromVector() {
     charVect.erase(std::remove(charVect.begin(), charVect.end(), 'r'), charVect.end());
 
     print<char>("removeDuplicateCharacterFromVector:::Vector Before:: ", charVect);
+
+    std::set<char> uniqueChars(charVect.begin(), charVect.end());
+    std::cout << "removeDuplicateCharacterFromVector::: Unique characters:: ";
+    for (auto &i : uniqueChars)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << '\n';
 }
 
 
