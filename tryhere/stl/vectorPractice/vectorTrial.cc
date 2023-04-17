@@ -82,6 +82,20 @@ int main() {
 
   cout << std::endl;
 
+  std::cout << "+++++++++++++++++" << std::endl;
+
+  std::vector<std::vector<std::string>> numVec ({{"A", "B", "C"},
+                                        {"D", "E", "F"},
+                                        {"G", "H", "I"}});
+
+    for(auto&& var: numVec) {
+      for (auto &&i : var)
+      {
+        std::cout << " " << i << " ";
+      }
+      std::cout << std::endl;
+    }
+
 
   return 0;
 }
