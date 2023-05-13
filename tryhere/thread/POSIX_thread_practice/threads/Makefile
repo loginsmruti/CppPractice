@@ -1,10 +1,10 @@
-CC		= g++
+CC			= g++
 CFLAGS		= -c -Wall
 LDFLAGS		= -lpthread
-SOURCES		= main.cpp ../threads/thread.cpp
-INCLUDES	= -I../threads
+SOURCES		= main.cpp thread.cpp
+INCLUDES	= -I.
 OBJECTS		= $(SOURCES:.cpp=.o)
-TARGET		= mutex
+TARGET		= thread.out
 
 all: $(SOURCES) $(TARGET)
 
