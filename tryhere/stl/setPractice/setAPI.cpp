@@ -256,10 +256,14 @@ int main(int argc, char const *argv[])
                                     Product(5, "Product E", 50.0, {501, 502}),
                                     Product(6, "Product F", 60.0, {601, 602})
                                     });
-    for(auto& product : prodSet6) {
-        if(product.getId() == 6) {
-            prodSet6.erase(product);
+    std::set<Product>::iterator prodSet6Iter = prodSet6.begin();                            
+    while(prodSet6Iter != prodSet6.end()) {
+        if (prodSet6Iter->getId() == 6) {
+            prodSet6Iter = prodSet6.erase(prodSet6Iter);
+        } else {
+            prodSet6Iter++;
         }
+        
     }
     print<Product>("Post Erase by value: ", prodSet6);
 
