@@ -91,11 +91,11 @@ public:
 
 
     // Comparator for sorting products by ID
-    struct CompareByID {
+/*     struct CompareByID {
         bool operator()(const Product& a, const Product& b) const {
             return a.getId() < b.getId();
         }
-    };
+    }; */
 
     
     

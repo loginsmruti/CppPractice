@@ -52,12 +52,13 @@ int main()
         
         //copy
         std::vector<std::string> copyStr(rangeStr);
-        
-        //initializer list
-        std::vector<std::string> initStr({"Hi", "bye", "Bonjour", "Hola", "Yeah"});
 
         //move
         std::vector<std::string> moveStr(std::move(initStr));
+
+
+        //initializer list
+        std::vector<std::string> initStr({"Hi", "bye", "Bonjour", "Hola", "Yeah"});
 
         int myInts[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         std::vector<int> arrVect(myInts , myInts + sizeof(myInts)/ sizeof(int));

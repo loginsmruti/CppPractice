@@ -6,6 +6,9 @@
 int main() 
 {
 
+    //You can construct the array via its constructors & You can only modify the std::array by swap API, at, operator[], front, back
+    //The irony is there is no other API available to modify the std::aray
+
 //Constructor
     //default initialization
     std::array<int , 5> myArray = {0};

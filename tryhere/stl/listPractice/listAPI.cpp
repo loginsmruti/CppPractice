@@ -37,15 +37,21 @@ class SampleStr
     
         SampleStr& operator=(const SampleStr& other)
         {
-            s = other.s;
-            std::cout << " copy assigned\n";
+            if (this != &other) 
+            {
+                s = other.s;
+                std::cout << " copy assigned\n";
+            }
             return *this;
         }
     
         SampleStr& operator=(SampleStr&& other)
         {
-            s = std::move(other.s);
-            std::cout << " move assigned\n";
+            if (this != &other) 
+            {
+                s = std::move(other.s);
+                std::cout << " move assigned\n";
+            }
             return *this;
         }
         friend std::ostream& operator<<(std::ostream& os, const SampleStr& str) {
