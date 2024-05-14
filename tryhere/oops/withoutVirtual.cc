@@ -5,7 +5,7 @@
 class Parent;
 class ChildOne;
 class ChildTwo;
-
+ 
 class MemberFunctionWrapper
 {
    public:

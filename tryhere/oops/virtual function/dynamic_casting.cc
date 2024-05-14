@@ -35,8 +35,8 @@ public:
 	{
 	}
  
-	std::string& getName() { return m_name; }
-	virtual ClassID getClassID() { return DERIVED; }
+	std::string& getName() const { return m_name; }
+	virtual ClassID getClassID() override { return DERIVED; }
  
 };
  

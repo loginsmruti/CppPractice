@@ -4,14 +4,18 @@
 
 using boost::asio::ip::tcp;
 
-class Session : public std::enable_shared_from_this<Session> {
+class Session : public std::enable_shared_from_this<Session> 
+{
 public:
     Session(tcp::socket socket, boost::asio::io_context& io_context, const std::string& target_address, short target_port)
-        : socket_(std::move(socket)), io_context_(io_context),
-          target_endpoint_(boost::asio::ip::make_address(target_address), target_port),
-          target_socket_(io_context) {}
+        : socket_(std::move(socket)), 
+            io_context_(io_context),
+            target_endpoint_(boost::asio::ip::make_address(target_address), target_port),
+            target_socket_(io_context) 
+            {}
 
-    void start() {
+    void start() 
+    {
         do_connect();
     }
 
@@ -56,15 +60,21 @@ private:
 class Proxy {
 public:
     Proxy(boost::asio::io_context& io_context, short listen_port, const std::string& target_address, short target_port)
-        : io_context_(io_context), acceptor_(io_context, tcp::endpoint(tcp::v4(), listen_port)),
-          target_address_(target_address), target_port_(target_port) {
+        : io_context_(io_context), 
+        acceptor_(io_context, 
+        tcp::endpoint(tcp::v4(), listen_port)),
+        target_address_(target_address), 
+        target_port_(target_port) 
+    {
         do_accept();
     }
 
 private:
     void do_accept() {
-        acceptor_.async_accept([this](boost::system::error_code ec, tcp::socket socket) {
-            if (!ec) {
+        acceptor_.async_accept([this](boost::system::error_code ec, tcp::socket socket) 
+        {
+            if (!ec) 
+            {
                 std::make_shared<Session>(std::move(socket), io_context_, target_address_, target_port_)->start();
             }
             do_accept();
