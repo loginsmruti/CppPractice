@@ -13,10 +13,12 @@ int singleNonDuplicate(std::vector<int>& arr)
 	}
 
     for (auto &&i : unMap) {
-        //std::cout << i.first << ":" << i.second << std::endl;
+        std::cout << i.first << ":" << i.second << std::endl;
         if(i.second == 1)
             return i.first;
     }
+
+    return 0;
 }
 
 int main() {

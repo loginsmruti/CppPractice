@@ -13,7 +13,9 @@ std::vector<bool> int_to_vector_bool(int16_t x) {
 }
 
 int main() {
+
     int16_t my_integer = 161;
+
     std::vector<bool> bool_vector = int_to_vector_bool(my_integer);
 
     for (bool bit : bool_vector) {
